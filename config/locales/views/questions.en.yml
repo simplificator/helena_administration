@@ -1,4 +1,5 @@
 en:
-  questions:
-    new:
-      new: New question
+  helena_administration:
+    questions:
+      new:
+        new: New question

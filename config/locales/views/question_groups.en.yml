@@ -1,4 +1,5 @@
 en:
-  question_groups:
-    new:
-      new: New question group
+  helena_administration:
+    question_groups:
+      new:
+        new: New question group
