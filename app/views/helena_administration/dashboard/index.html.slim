@@ -3,8 +3,12 @@
   .col-xs-12.col-sm-4
     .decision.text-center
       = link_to surveys_path do
+        div
+          i.fa.fa-files-o
         = t('.manage_surveys')
   .col-xs-12.col-sm-4
     .decision.text-center
       = link_to new_import_survey_path do
+        div
+          i.fa.fa-cloud-upload
         = t('.import_survey')
