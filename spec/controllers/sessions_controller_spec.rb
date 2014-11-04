@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe  HelenaAdministration::SessionsController do
+describe HelenaAdministration::SessionsController do
   routes { HelenaAdministration::Engine.routes }
 
   let(:survey) { create :survey }

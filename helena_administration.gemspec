@@ -1,24 +1,24 @@
-$:.push File.expand_path("../lib", __FILE__)
+$LOAD_PATH.push File.expand_path('../lib', __FILE__)
 
 # Maintain your gem's version:
-require "helena_administration/version"
+require 'helena_administration/version'
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "helena_administration"
+  s.name        = 'helena_administration'
   s.version     = HelenaAdministration::VERSION
   s.authors     = ['Markus Graf']
   s.email       = ['info@markusgraf.ch']
   s.homepage    = 'https://github.com/gurix/helena_administration'
-  s.summary     = "TODO: Summary of HelenaAdministration."
-  s.description = "TODO: Description of HelenaAdministration."
+  s.summary     = 'TODO: Summary of HelenaAdministration.'
+  s.description = 'TODO: Description of HelenaAdministration.'
   s.license     = 'GPL3'
 
   s.files        = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {spec}/*`.split("\n")
 
   s.add_dependency 'kaminari'
-  s.add_dependency "rails", "~> 4.1.7"
+  s.add_dependency 'rails', '~> 4.1.7'
   s.add_dependency 'breadcrumbs_on_rails', '~> 2.3'
 
   # Use slim template engine as default

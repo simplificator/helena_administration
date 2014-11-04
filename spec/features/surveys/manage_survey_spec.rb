@@ -6,7 +6,7 @@ describe 'Surveys' do
     create :survey, name: 'Life satisfaction scale', position: 1
 
     visit surveys_path
-    
+
     within 'nav .breadcrumbs' do
       expect(page).to have_content 'Surveys'
     end

@@ -4,7 +4,7 @@ module HelenaAdministration
       content_for :title, page_title.to_s
       page_title
     end
-    
+
     # adds ... in between like if you have to long names in apple finder so you can i.e see the beginning and the suffix
     def truncate_between(str, after = 30)
       str = '' if str.nil?
