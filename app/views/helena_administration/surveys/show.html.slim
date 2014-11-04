@@ -101,6 +101,7 @@ div id="#{dom_id(@survey)}"
                 span.label.label-success = t 'shared.completed'
               - else
                 span.label.label-default = t 'shared.not_completed'
+
             td.version = session.version.version
             td.token      = session.token
             td.view_token = session.view_token

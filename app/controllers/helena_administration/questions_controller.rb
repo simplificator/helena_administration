@@ -51,7 +51,7 @@ module HelenaAdministration
       add_breadcrumb t('shared.navigation.dashboard'), dashboard_index_path
       add_breadcrumb Helena::Survey.model_name.human(count: 2), surveys_path
       add_breadcrumb @survey.name, @survey
-      add_breadcrumb t('versions.version', version: @version.version), [@survey, @version]
+      add_breadcrumb t('helena_administration.versions.version', version: @version.version), [@survey, @version]
       add_breadcrumb @question_group.title, [@survey, @version, @question_group]
     end
 

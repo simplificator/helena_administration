@@ -16,3 +16,26 @@ gemspec
 gem 'helena', path: '../helena'
 
 gem 'compass-h5bp', group: :assets
+
+group :development, :test do
+  gem 'better_errors'
+  gem 'quiet_assets'
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'dotenv-rails'
+  gem 'mongoid-rspec'
+  gem 'rspec-collection_matchers', '~> 1'
+  gem 'database_cleaner'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'spork'
+  gem 'autotest',            require: false
+  gem 'autotest-rails-pure', require: false
+  gem 'autotest-fsevent',    require: false
+  gem 'autotest-growl',      require: false
+  gem 'ffaker', '~> 1.23'
+  gem 'binding_of_caller'
+  gem 'rspec-core'
+end

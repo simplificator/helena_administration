@@ -6,7 +6,7 @@ module HelenaAdministration
     before_action :load_version, only: [:edit, :update, :show]
 
     def show
-      add_breadcrumb t 'versions.version', version: @version.version
+      add_breadcrumb t 'helena_administration.versions.version', version: @version.version
     end
 
     def new
@@ -28,7 +28,7 @@ module HelenaAdministration
 
     def edit
       @version.survey_detail ||= Helena::SurveyDetail.new
-      add_breadcrumb t 'versions.version', version: @version.version
+      add_breadcrumb t 'helena_administration.versions.version', version: @version.version
     end
 
     def update
@@ -36,7 +36,7 @@ module HelenaAdministration
         flash[:success] = t 'shared.actions.updated'
       else
         flash.now[:danger] = t 'shared.actions.error'
-        add_breadcrumb t 'versions.version', version: @version.version
+        add_breadcrumb t 'helena_administration.versions.version', version: @version.version
       end
       respond_with [@survey, @version], location: [:edit, @survey, @version]
     end
