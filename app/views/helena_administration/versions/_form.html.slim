@@ -1,0 +1,14 @@
+= simple_form_for [@survey, version] do | f |
+  = f.simple_fields_for :survey_detail do |detail|
+    = detail.input :title
+    = detail.input :description, as: :text, input_html: { cols: 60, rows: 10 }
+  = f.input :notes
+  = f.input :session_report, as: :text, hint: t('.slim_lang_hint_html'), input_html: { cols: 60, rows: 10, class: 'slim_lang' }
+  - if f.object.persisted?
+    = f.input :active, as: :boolean
+
+  = f.simple_fields_for :settings do |setting|
+    = setting.input :display_progressbar, as:         :boolean,
+                                          label:      t('.display_progressbar'),
+                                          input_html: { checked: (version.settings['display_progressbar'] == '1') }
+  = f.submit t('shared.save'), class: 'btn btn-success'

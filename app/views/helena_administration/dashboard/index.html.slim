@@ -1,0 +1,10 @@
+- title = t('shared.navigation.dashboard')
+.row
+  .col-xs-12.col-sm-4
+    .decision.text-center
+      = link_to surveys_path do
+        = t('.manage_surveys')
+  .col-xs-12.col-sm-4
+    .decision.text-center
+      = link_to new_import_survey_path do
+        = t('.import_survey')

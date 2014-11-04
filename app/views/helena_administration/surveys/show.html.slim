@@ -1,0 +1,119 @@
+div id="#{dom_id(@survey)}"
+  .row
+    .col-md-10
+      dl.dl-horizontal
+        dt #
+        dd = @survey.position
+
+        dt = Helena::Survey.human_attribute_name :name
+        dd = @survey.name
+
+        dt = Helena::Survey.human_attribute_name :created_at
+        dd = distance_of_time_in_words_to_now(@survey.created_at)
+
+        dt = Helena::Survey.human_attribute_name :language
+        dd = @survey.language
+    .col-md-2
+      .pull-right
+        = link_to edit_survey_path(@survey), class: 'btn btn-default', role: 'button' do
+          i.fa.fa-pencil-square-o
+          = t('shared.actions.edit')
+
+        = link_to survey_path(@survey), class: 'btn btn-danger', method: :delete, data: { confirm: t('shared.actions.ask_for_deletion') } do
+          i.fa.fa-remove
+          = t('shared.actions.delete')
+
+
+  hr
+
+  h3 = Helena::Version.model_name.human(count: 2)
+
+  table.table.table-striped.versions
+    thead
+      tr
+        th.version width='5%' = Helena::Version.human_attribute_name(:version)
+        th.activity_state width='5%' = Helena::Version.human_attribute_name(:active)
+        th.notes = Helena::Version.human_attribute_name(:notes)
+        th.created_at width='10%' = Helena::Version.human_attribute_name(:created_at)
+        th width='20%'
+          = link_to new_survey_version_path(@survey), class: 'btn btn-default pull-right', role: 'button' do
+            i.fa.fa-plus-square-o
+            = t('shared.actions.new')
+    tbody
+      - @survey.versions.desc(:version).each do |version|
+        tr id="#{dom_id(version)}"
+          td.version  = version.version
+          td.activity_state
+            - if version.active
+              span.label.label-success = t 'shared.active'
+            - else
+              span.label.label-default = t 'shared.inactive'
+          td.notes      = version.notes
+          td.create_at  = distance_of_time_in_words_to_now(version.created_at)
+          td.actions
+            .pull-right
+
+              = link_to [@survey, version], class: 'btn btn-default', role: 'button' do
+                i.fa.fa-angle-right
+                = t('shared.actions.view')
+              = link_to edit_survey_version_path(@survey, version), class: 'btn btn-default', role: 'button' do
+                i.fa.fa-pencil-square-o
+                = t('shared.actions.edit')
+              = link_to [@survey, version], class: "btn btn-danger #{'disabled' if version.active}", method: :delete, data: { confirm: t('shared.actions.ask_for_deletion') } do
+                i.fa.fa-remove
+                = t('shared.actions.delete')
+
+  - if @survey.versions.any?
+    hr
+    h3.pull-left = Helena::Session.model_name.human(count: 2)
+    = link_to survey_sessions_path(@survey, format: :csv), class: 'btn btn-default pull-right', role: 'button' do
+      i.fa.fa-download
+      = t('.export_sessions_as_csv')
+
+    = link_to survey_sessions_path(@survey, format: :json), class: 'btn btn-default pull-right', role: 'button' do
+      i.fa.fa-download
+      = t('.export_sessions_as_json')
+
+    table.table.table-striped.sessions
+      thead
+        tr
+          th.completed width='5%' = Helena::Session.human_attribute_name(:completed)
+          th.version width='5%' = Helena::Session.human_attribute_name(:version)
+          th.token = Helena::Session.human_attribute_name(:token)
+          th.view_token = Helena::Session.human_attribute_name(:view_token)
+          th.updated_at width='10%' = Helena::Session.human_attribute_name(:updated_at)
+          th.created_at width='10%' = Helena::Session.human_attribute_name(:created_at)
+          th width='20%'
+            = link_to new_survey_session_path(@survey), class: 'btn btn-default pull-right', role: 'button' do
+              i.fa.fa-plus-square-o
+              = t('shared.actions.new')
+      tfoot
+        tr
+          td colspan='7'
+            .pull-right
+              = paginate @sessions
+
+      tbody
+        - @sessions.each do |session|
+          tr id="#{dom_id(session)}"
+            td.completed
+              - if session.completed
+                span.label.label-success = t 'shared.completed'
+              - else
+                span.label.label-default = t 'shared.not_completed'
+            td.version = session.version.version
+            td.token      = session.token
+            td.view_token = session.view_token
+            td.updated_at  = distance_of_time_in_words_to_now(session.updated_at)
+            td.create_at  = distance_of_time_in_words_to_now(session.created_at)
+            td.actions
+              .pull-right
+                = link_to helena.edit_session_path(session.token), class: 'btn btn-default', role: 'button' do
+                  i.fa.fa-play
+                  = t('shared.actions.run')
+                = link_to [:edit, @survey, session], class: 'btn btn-default', role: 'button' do
+                  i.fa.fa-pencil-square-o
+                  = t('shared.actions.edit')
+                = link_to [@survey, session], class: 'btn btn-danger', method: :delete, data: { confirm: t('shared.actions.ask_for_deletion') } do
+                  i.fa.fa-remove
+                  = t('shared.actions.delete')

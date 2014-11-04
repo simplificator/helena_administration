@@ -1,0 +1,13 @@
+doctype html
+html
+  = render 'head'
+
+  body class=controller.controller_name
+    = render 'header'
+
+    .container-fluid
+      = render 'flash_messages'
+      = yield
+
+    / Javascript at the bottom for fast page loading
+    = render 'javascripts'

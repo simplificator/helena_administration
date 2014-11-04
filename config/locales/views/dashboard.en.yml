@@ -1,0 +1,5 @@
+en:
+  dashboard:
+    index:
+      manage_surveys: Manage Surveys
+      import_survey: Import survey

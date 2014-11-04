@@ -1,0 +1,8 @@
+= simple_form_for [@survey, session] do | f |
+  = f.input :token
+  = f.input :view_token
+  = f.input :answers_as_yaml, as: :text, hint: t('shared.yaml_lang_hint_html'), input_html: { cols: 60, rows: 10, class: 'yaml_lang' }
+  = f.input :completed, as: :boolean
+  = f.input :last_question_group_id, collection: session.version.question_groups,
+                                     label_method: ->(question_group){ t("#{question_group.position}: #{question_group.title || t('shared.untitled')}") }
+  = f.submit t('shared.save'), class: 'btn btn-success'

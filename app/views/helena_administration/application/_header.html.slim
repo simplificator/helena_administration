@@ -1,0 +1,16 @@
+header#header
+  nav.navbar.navbar-default role="navigation"
+    .container-fluid
+      .navbar-header
+        button.navbar-toggle.collapsed data-target="#navbar-collapse" data-toggle="collapse" type="button"
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        = link_to 'Helena Admin', root_path, class: 'navbar-brand'
+      #navbar-collapse.collapse.navbar-collapse
+        ul.nav.navbar-nav.breadcrumbs
+          = render_breadcrumbs tag: :li, separator: ''
+        ul.nav.navbar-nav.navbar-right
+          li
+            a href="https://github.com/gurix/helena-admin" target='_blank' About

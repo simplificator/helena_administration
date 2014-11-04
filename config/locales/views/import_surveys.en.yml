@@ -1,0 +1,11 @@
+en:
+  helena_administration:
+    import_surveys:
+      new:
+        import: Import Survey
+
+      create:
+        import_error: "Import error:"
+
+      form:
+        import: Import

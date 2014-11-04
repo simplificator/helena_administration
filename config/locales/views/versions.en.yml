@@ -1,0 +1,10 @@
+en:
+  versions:
+    version: "Version %{version}"
+
+    new:
+      new: New version
+
+    form:
+      slim_lang_hint_html: Please provide a slim template. For more details see <a href='http://slim-lang.com/' target='_blank'>http://slim-lang.com</a>
+      display_progressbar: Display progressbar

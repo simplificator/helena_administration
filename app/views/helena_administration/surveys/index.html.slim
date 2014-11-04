@@ -1,0 +1,34 @@
+table.table.table-striped
+  thead
+    tr
+      th.position width='1%' #
+      th.name = Helena::Survey.human_attribute_name(:name)
+      th.lanugage  width='20%' = Helena::Survey.human_attribute_name(:language)
+      th.created_at width='10%' = Helena::Survey.human_attribute_name(:created_at)
+      th width='20%'
+        = link_to new_survey_path, class: 'btn btn-default pull-right', role: 'button' do
+          i.fa.fa-plus-square-o
+          = t('shared.actions.new')
+        = link_to new_import_survey_path, class: 'btn btn-default pull-right', role: 'button' do
+          i.fa.fa-caret-square-o-up
+          = t('.import')
+  tbody
+    - @surveys.each do |survey|
+      tr id="#{dom_id(survey)}"
+        td.position   = survey.position
+        td.name       = link_to survey.name, survey_path(survey)
+        td.language   = survey.language
+        td.create_at  = distance_of_time_in_words_to_now(survey.created_at)
+        td.actions
+          .pull-right
+            = link_to survey, class: 'btn btn-default', role: 'button' do
+              i.fa.fa-angle-right
+              = t('shared.actions.view')
+
+            = link_to edit_survey_path(survey), class: 'btn btn-default', role: 'button' do
+              i.fa.fa-pencil-square-o
+              = t('shared.actions.edit')
+
+            = link_to survey, class: 'btn btn-danger', method: :delete, data: { confirm: t('shared.actions.ask_for_deletion') } do
+              i.fa.fa-remove
+              = t('shared.actions.delete')

@@ -1,0 +1,21 @@
+en:
+  shared:
+    navigation:
+      dashboard: Dashboard
+
+    actions:
+      view: View
+      edit: Edit
+      delete: Delete
+      new: New
+      save: Save
+      run: Run
+      ask_for_deletion: Are you sure you want to delete that?
+      deleted: Successfully deleted
+      updated: Successfully updated
+      created: Successfully created
+      error: Whoops an error occured. Please check your input.
+
+    active: Active
+    inactive: Inactive
+    yaml_lang_hint_html: Please provide a YAML file. For more details see <a href='http://www.yaml.org/' target='_blank'>http://www.yaml.org</a>

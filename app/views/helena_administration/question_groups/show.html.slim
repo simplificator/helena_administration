@@ -1,0 +1,60 @@
+div id="#{dom_id(@question_group)}"
+  .row
+    .col-md-10
+      dl.dl-horizontal
+        dt = Helena::QuestionGroup.human_attribute_name :position
+        dd = @question_group.position
+
+        - if @question_group.allow_to_go_back
+          dt
+          dd = Helena::QuestionGroup.human_attribute_name(:allow_to_go_back) 
+
+        dt = Helena::QuestionGroup.human_attribute_name :title
+        dd = @question_group.title
+
+        dt = Helena::QuestionGroup.human_attribute_name :created_at
+        dd = distance_of_time_in_words_to_now(@question_group.created_at)
+
+    .col-md-2
+      .pull-right
+        = link_to [:edit, @survey, @version, @question_group], class: "btn btn-default  #{'disabled' if @version.active}", role: 'button' do
+          i.fa.fa-pencil-square-o
+          = t('shared.actions.edit')
+          = link_to [@survey, @version, @question_group], class: "btn btn-danger #{'disabled' if @version.active}", method: :delete, data: { confirm: t('shared.actions.ask_for_deletion') } do
+            i.fa.fa-remove
+            = t('shared.actions.delete')
+
+  hr
+  h3 = Helena::Question.model_name.human(count: 2)
+
+  table.table.table-striped.questions
+    thead
+      tr
+        th.position width='5%' = Helena::Question.human_attribute_name(:position)
+        th.code width='10%' = Helena::Question.human_attribute_name(:code)
+        th.question_text = Helena::Question.human_attribute_name(:question_text)
+        th.type width='10%' = Helena::Question.human_attribute_name(:type)
+        th.created_at width='10%' = Helena::Question.human_attribute_name(:created_at)
+        th width='20%'
+          = link_to [:new, @survey, @version, @question_group, :question], class: "btn btn-default pull-right #{'disabled' if @version.active}", role: 'button' do
+            i.fa.fa-plus-square-o
+            = t('shared.actions.new')
+    tbody
+      - @question_group.questions.asc(:position).each do |question|
+        tr id="#{dom_id(question)}"
+          td.position      = question.position
+          td.code          = question.code
+          td.question_text = question.question_text
+          td.type          = question.class.model_name.human
+          td.create_at     = distance_of_time_in_words_to_now(question.created_at)
+          td.actions
+            .pull-right
+              = link_to [@survey, @version, @question_group, question], class: 'btn btn-default', role: 'button' do
+                i.fa.fa-angle-right
+                = t('shared.actions.view')
+              = link_to [:edit, @survey, @version, @question_group, question], class: "btn btn-default #{'disabled' if @version.active}", role: 'button' do
+                i.fa.fa-pencil-square-o
+                = t('shared.actions.edit')
+              = link_to [@survey, @version, @question_group, question], class: "btn btn-danger #{'disabled' if @version.active}", method: :delete, data: { confirm: t('shared.actions.ask_for_deletion') } do
+                i.fa.fa-remove
+                = t('shared.actions.delete')

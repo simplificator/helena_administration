@@ -1,0 +1,5 @@
+= simple_form_for(survey) do | f |
+  = f.input :name
+  = f.input :tag_list
+  = f.input :language, collection: I18n.available_locales, include_blank: false
+  = f.submit value: t('shared.actions.save'), class: 'btn btn-success'

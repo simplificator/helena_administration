@@ -1,0 +1,13 @@
+doctype html
+html
+  = render 'helena_administration/application/head'
+
+  body class=controller.controller_name
+    = render 'helena_administration/application/header'
+
+    .container-fluid
+      = render 'helena_administration/application/flash_messages'
+      = yield
+
+    / Javascript at the bottom for fast page loading
+    = render 'javascripts'

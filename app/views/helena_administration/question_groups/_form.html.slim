@@ -1,0 +1,5 @@
+= simple_form_for [@survey, @version, question_group] do | f |
+  = f.input :position
+  = f.input :title
+  = f.input :allow_to_go_back, as: :boolean
+  = f.submit t('shared.save'), class: 'btn btn-success'

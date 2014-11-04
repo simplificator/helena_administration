@@ -1,0 +1,9 @@
+en:
+  surveys:
+    show:
+      survey_details: Survey
+      export_sessions_as_csv: Export answers as CSV
+      export_sessions_as_json: Export answers as JSON
+
+    index:
+      import: Import

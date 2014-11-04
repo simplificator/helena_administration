@@ -1,0 +1,68 @@
+div id="#{dom_id(@version)}"
+  .row
+    .col-md-10
+      dl.dl-horizontal
+        - if @version.survey_detail
+          dt = Helena::SurveyDetail.human_attribute_name :title
+          dd = @version.survey_detail.title
+
+          dt = Helena::SurveyDetail.human_attribute_name :description
+          dd = @version.survey_detail.description
+
+        dt = Helena::Version.human_attribute_name :active
+        dd
+          - if @version.active
+            span.label.label-success = t 'shared.active'
+          - else
+            span.label.label-default = t 'shared.inactive'
+
+        dt = Helena::Version.human_attribute_name :version
+        dd = @version.version
+
+        dt = Helena::Version.human_attribute_name :notes
+        dd = @version.notes
+
+        dt = Helena::Version.human_attribute_name :created_at
+        dd = distance_of_time_in_words_to_now(@version.created_at)
+
+        dt = Helena::Version.human_attribute_name :session_report
+        dd = truncate_between strip_tags(sanitize @version.session_report), 100
+    .col-md-2
+      .pull-right
+        = link_to edit_survey_version_path(@survey, @version), class: 'btn btn-default', role: 'button' do
+          i.fa.fa-pencil-square-o
+          = t('shared.actions.edit')
+          = link_to [@survey, @version], class: "btn btn-danger #{'disabled' if @version.active}", method: :delete, data: { confirm: t('shared.actions.ask_for_deletion') } do
+            i.fa.fa-remove
+            = t('shared.actions.delete')
+  hr
+
+  h3 = Helena::QuestionGroup.model_name.human(count: 2)
+
+  table.table.table-striped.question_groups
+    thead
+      tr
+        th.position width='5%' = Helena::QuestionGroup.human_attribute_name(:position)
+        th.title = Helena::QuestionGroup.human_attribute_name(:title)
+        th.created_at width='10%' = Helena::QuestionGroup.human_attribute_name(:created_at)
+        th width='20%'
+          = link_to [:new, @survey, @version, :question_group], class: "btn btn-default pull-right #{'disabled' if @version.active}", role: 'button' do
+            i.fa.fa-plus-square-o
+            = t('shared.actions.new')
+    tbody
+      - @version.question_groups.asc(:position).each do |question_group|
+        tr id="#{dom_id(question_group)}"
+          td.position   = question_group.position
+          td.title      = question_group.title
+          td.create_at  = distance_of_time_in_words_to_now(question_group.created_at)
+          td.actions
+            .pull-right
+              = link_to [@survey, @version, question_group], class: 'btn btn-default', role: 'button' do
+                i.fa.fa-angle-right
+                = t('shared.actions.view')
+              = link_to [:edit, @survey, @version, question_group], class: "btn btn-default #{'disabled' if @version.active}", role: 'button' do
+                i.fa.fa-pencil-square-o
+                = t('shared.actions.edit')
+              = link_to [@survey, @version, question_group], class: "btn btn-danger #{'disabled' if @version.active}", method: :delete, data: { confirm: t('shared.actions.ask_for_deletion') } do
+                i.fa.fa-remove
+                = t('shared.actions.delete')

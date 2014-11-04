@@ -1,0 +1,11 @@
+- if @error
+  .alert.alert-danger
+    strong = @error.message
+    br
+    - @error.backtrace.each do |backtrace|
+      = backtrace
+      br
+
+= simple_form_for @import_survey_form, url: import_survey_path do |f|
+  = f.input :script, as: :text, hint: t('shared.yaml_lang_hint_html'), input_html: { cols: 60, rows: 30, class: 'yaml_lang' }
+  = f.submit value: t('.import'), class: 'btn btn-success'
