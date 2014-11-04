@@ -7,15 +7,17 @@ require "helena_administration/version"
 Gem::Specification.new do |s|
   s.name        = "helena_administration"
   s.version     = HelenaAdministration::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
+  s.authors     = ['Markus Graf']
+  s.email       = ['info@markusgraf.ch']
+  s.homepage    = 'https://github.com/gurix/helena_administration'
   s.summary     = "TODO: Summary of HelenaAdministration."
   s.description = "TODO: Description of HelenaAdministration."
-  s.license     = "MIT"
+  s.license     = 'GPL3'
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files        = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {spec}/*`.split("\n")
 
+  s.add_dependency 'kaminari'
   s.add_dependency "rails", "~> 4.1.7"
   s.add_dependency 'breadcrumbs_on_rails', '~> 2.3'
 
