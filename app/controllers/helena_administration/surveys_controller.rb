@@ -1,5 +1,5 @@
 module HelenaAdministration
-  class SurveysController < ::ApplicationController
+  class SurveysController < ApplicationController
     respond_to :html
 
     before_action :add_breadcrumbs
