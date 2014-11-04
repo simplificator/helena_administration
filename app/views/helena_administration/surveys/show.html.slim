@@ -111,9 +111,9 @@ div id="#{dom_id(@survey)}"
                 = link_to helena.edit_session_path(session.token), class: 'btn btn-default', role: 'button' do
                   i.fa.fa-play
                   = t('shared.actions.run')
-                = link_to [:edit, @survey, session], class: 'btn btn-default', role: 'button' do
+                = link_to edit_survey_session_path(@survey, session), class: 'btn btn-default', role: 'button' do
                   i.fa.fa-pencil-square-o
                   = t('shared.actions.edit')
-                = link_to [@survey, session], class: 'btn btn-danger', method: :delete, data: { confirm: t('shared.actions.ask_for_deletion') } do
+                = link_to survey_session_path(@survey, session), class: 'btn btn-danger', method: :delete, data: { confirm: t('shared.actions.ask_for_deletion') } do
                   i.fa.fa-remove
                   = t('shared.actions.delete')

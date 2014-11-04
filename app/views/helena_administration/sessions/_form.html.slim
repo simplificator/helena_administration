@@ -1,4 +1,4 @@
-= simple_form_for [@survey, session] do | f |
+= simple_form_for [@survey, session.becomes(Helena::Session)] do | f |
   = f.input :token
   = f.input :view_token
   = f.input :answers_as_yaml, as: :text, hint: t('shared.yaml_lang_hint_html'), input_html: { cols: 60, rows: 10, class: 'yaml_lang' }
