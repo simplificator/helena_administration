@@ -1,3 +1,22 @@
+GIT
+  remote: https://github.com/gurix/helena.git
+  revision: dcb8f22e738f41f9a91f74c1acdced0bdc7b69c1
+  branch: features/helena_1_0
+  specs:
+    helena (1.0.0.rc1)
+      bootstrap-sass (~> 3.2)
+      breadcrumbs_on_rails (~> 2.3)
+      haml-rails (~> 0.5)
+      jquery-rails (~> 3.1)
+      mongoid (~> 4.0.0.rc2)
+      mongoid-simple-tags (~> 0.1)
+      mongoid_orderable (~> 4.1)
+      rails (~> 4.1)
+      rails-i18n (~> 4.0)
+      sass-rails (~> 4.0.3)
+      simple_form (~> 3.1.0.rc2)
+      slim (~> 2.1.0)
+
 PATH
   remote: .
   specs:
@@ -21,23 +40,6 @@ PATH
       sass-rails (~> 4.0.3)
       simple_form (~> 3.1.0.rc2)
       slim-rails
-
-PATH
-  remote: ../helena
-  specs:
-    helena (1.0.0.rc1)
-      bootstrap-sass (~> 3.2)
-      breadcrumbs_on_rails (~> 2.3)
-      haml-rails (~> 0.5)
-      jquery-rails (~> 3.1)
-      mongoid (~> 4.0.0.rc2)
-      mongoid-simple-tags (~> 0.1)
-      mongoid_orderable (~> 4.1)
-      rails (~> 4.1)
-      rails-i18n (~> 4.0)
-      sass-rails (~> 4.0.3)
-      simple_form (~> 3.1.0.rc2)
-      slim (~> 2.1.0)
 
 GEM
   remote: https://rubygems.org/

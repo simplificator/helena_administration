@@ -13,7 +13,9 @@ gemspec
 # To use debugger
 # gem 'debugger'
 
-gem 'helena', path: '../helena'
+gem 'helena',
+  git: 'https://github.com/gurix/helena.git', branch: 'features/helena_1_0'
+  #path: '../helena/'
 
 gem 'compass-h5bp', group: :assets
 
