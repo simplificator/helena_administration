@@ -23,6 +23,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'quiet_assets'
   gem 'pry'
+  gem 'simplecov'
   gem 'pry-byebug'
   gem 'dotenv-rails'
   gem 'mongoid-rspec'
