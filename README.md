@@ -37,7 +37,7 @@ HelenaAdministration::ApplicationController calls by default the `can_administer
 ```ruby
 HelenaAdministration::ApplicationController.class_eval do
   def can_administer?
-    current_user.admin?
+    current_user.admin? if current_user
   end
 end
 
