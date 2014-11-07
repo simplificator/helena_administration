@@ -23,7 +23,7 @@ describe 'Sessions' do
   end
 
   scenario 'User edits a session' do
-    session = survey.sessions.create version: version, token: 'xxx', _type: 'Helena::Session'
+    session = survey.sessions.create version: version, token: 'xxx'
     version.question_groups.create title: 'first question group'
     second_question_group = version.question_groups.create title: 'second question group'
 
