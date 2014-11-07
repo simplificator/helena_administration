@@ -28,7 +28,7 @@ $ bundle install
 ## Usage
 Add the following line to your routes to include administration in your App
 
-```
+```ruby
 mount HelenaAdministration::Engine, at: '/admin'
 ```
 
