@@ -13,9 +13,35 @@ Helena Administration is a simple rails application that provides a user interfa
 see [requirements for running an application using Helena](https://github.com/gurix/helena#requirements)
 
 ## Installation
+Add this line to your application's Gemfile:
+
 ```
-TODO
+gem 'helena_administration', git: 'git://github.com/gurix/helena_administration.git'
 ```
+
+And then execute:
+
+```
+$ bundle install
+```
+
+## Usage
+Add the following line to your routes to include administration in your App
+
+```
+mount HelenaAdministration::Engine, at: '/admin'
+```
+
+HelenaAdministration::ApplicationController calls by default the `can_administer?` method that is not implemented by default, you have to define a decorator under `yourapp/app/decorators/controllers/helena_administration/application_controller_decorators.rb`. i.e your `current_user` has an `admin?` attribute.
+
+```ruby
+HelenaAdministration::ApplicationController.class_eval do
+  def can_administer?
+    current_user.admin?
+  end
+end
+
+```  
 
 ## Contributing
 
