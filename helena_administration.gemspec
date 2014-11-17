@@ -17,22 +17,21 @@ Gem::Specification.new do |s|
   s.files        = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {spec}/*`.split("\n")
 
-  s.add_dependency 'kaminari'
-  s.add_dependency 'rails', '~> 4.1.7'
-  s.add_dependency 'slim-rails'
-  s.add_dependency 'codemirror-rails'
-  s.add_dependency 'mongoid', '~> 4.0.0.rc2'
+  s.add_runtime_dependency 'kaminari', '~> 0.16.1'
+  s.add_runtime_dependency 'rails', '~> 4.1'
+  s.add_runtime_dependency 'slim-rails', '~> 2.1.5'
+  s.add_runtime_dependency 'codemirror-rails', '~> 4.5'
+  s.add_dependency 'mongoid', '~> 4.0'
   s.add_dependency 'mongoid_orderable', '~> 4.1'
   s.add_dependency 'mongoid-simple-tags', '~> 0.1'
   s.add_dependency 'haml-rails', '~> 0.5'
-  s.add_dependency 'html5-rails'
+  s.add_runtime_dependency 'html5-rails', '~> 0.1'
   s.add_dependency 'jquery-rails', '~> 3.1'
-  s.add_dependency 'sass-rails', '~> 4.0.3' # version needed here http://stackoverflow.com/questions/22392862/undefined-method-environment-for-nilnilclass-when-importing-bootstrap
+  s.add_runtime_dependency 'sass-rails', '~> 4.0'
   s.add_dependency 'bootstrap-sass', '~> 3.2'
   s.add_dependency 'simple_form', '~> 3.1.0.rc2'
   s.add_dependency 'breadcrumbs_on_rails', '~> 2.3'
   s.add_dependency 'rails-i18n', '~> 4.0'
-  s.add_dependency 'font-awesome-rails'
-  s.add_dependency 'coffee-rails'
-  s.add_dependency 'jquery-rails'
+  s.add_runtime_dependency 'font-awesome-rails', '~> 4.2'
+  s.add_runtime_dependency 'coffee-rails', '~> 4.1'
 end

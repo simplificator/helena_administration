@@ -14,3 +14,5 @@ Documentation:
 LineLength:
   Enabled: true
   Max: 160
+AbcSize:
+  Enabled: false
