@@ -23,7 +23,6 @@ PATH
     helena_administration (0.0.1)
       bootstrap-sass (~> 3.2)
       breadcrumbs_on_rails (~> 2.3)
-      breadcrumbs_on_rails (~> 2.3)
       codemirror-rails
       coffee-rails
       font-awesome-rails

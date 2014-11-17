@@ -19,9 +19,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'kaminari'
   s.add_dependency 'rails', '~> 4.1.7'
-  s.add_dependency 'breadcrumbs_on_rails', '~> 2.3'
-
-  # Use slim template engine as default
   s.add_dependency 'slim-rails'
   s.add_dependency 'codemirror-rails'
   s.add_dependency 'mongoid', '~> 4.0.0.rc2'
