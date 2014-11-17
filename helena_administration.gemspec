@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ['Markus Graf']
   s.email       = ['info@markusgraf.ch']
   s.homepage    = 'https://github.com/gurix/helena_administration'
-  s.summary     = 'TODO: Summary of HelenaAdministration.'
-  s.description = 'TODO: Description of HelenaAdministration.'
+  s.summary     = 'Helena Administration is a simple rails application that provides a user interface to manage apps running with the Helena framework.'
+  s.description = 'Helena Administration is a simple rails application that provides a user interface to manage apps running with the Helena framework.'
   s.license     = 'GPL3'
 
   s.files        = `git ls-files`.split("\n")
