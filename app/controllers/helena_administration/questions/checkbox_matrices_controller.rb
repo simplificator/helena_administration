@@ -1,6 +1,6 @@
 module HelenaAdministration
   module Questions
-    class RadioMatrixController < QuestionsController
+    class CheckboxMatricesController < QuestionsController
       include Helena::Concerns::Questions::MatrixQuestions
     end
   end
