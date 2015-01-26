@@ -13,8 +13,8 @@ gemspec
 # To use debugger
 # gem 'debugger'
 
-gem 'helena', '~> 1.0.0.rc1'
-  #git: 'https://github.com/gurix/helena.git'
+gem 'helena', '~> 1.0.0.rc2',
+  git: 'https://github.com/gurix/helena.git'
   #path: '../helena/'
 
 gem 'compass-h5bp', group: :assets
@@ -28,7 +28,8 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'mongoid-rspec'
   gem 'rspec-collection_matchers', '~> 1'
-  gem 'database_cleaner'
+  # Remove git dependency after 1.4.1 is released, see https://github.com/DatabaseCleaner/database_cleaner/pull/316
+  gem 'database_cleaner', git: 'https://github.com/DatabaseCleaner/database_cleaner.git'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'capybara'
