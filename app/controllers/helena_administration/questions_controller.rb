@@ -18,10 +18,11 @@ module HelenaAdministration
       @question = @question_group.questions.build question_params
       if @question.save
         flash[:success] = t 'shared.actions.created'
+        respond_with [@survey, @version, @question_group, @question]
       else
-        flash.now[:danger] = t 'shared.actions.error'
+        flash[:danger] = t 'shared.actions.error'
+        render 'new'
       end
-      respond_with [@survey, @version, @question_group, @question]
     end
 
     def edit

@@ -47,6 +47,8 @@ describe 'Questions' do
     fill_in 'Code', with: ''
 
     expect { click_button 'Save' }.to change { question_group.reload.questions.count }.by(0)
+
+    expect(page).to have_content "can't be blank"
   end
 
   scenario 'edits a question' do
