@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe 'Question groups' do
-
   let!(:survey) { create :survey }
   let!(:version) { survey.versions.create version: 0 }
 
@@ -45,7 +44,6 @@ describe 'Question groups' do
 
     expect(new_question_group.position).to eq 77
     expect(new_question_group.title).to eq 'Foo Bar'
-
   end
 
   scenario 'User edits question_group' do

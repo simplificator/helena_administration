@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe 'Versions ' do
-
   let!(:survey) { create :survey }
   let!(:baseversion) { survey.versions.create version: 0 }
 
@@ -89,7 +88,6 @@ describe 'Versions ' do
     within "##{dom_id(inactive_version)}" do
       expect { click_link 'Delete' }.to change { survey.reload.versions.count }.by(-1)
     end
-
   end
 
   scenario 'User can view version details' do
