@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe 'Checkbox group question management' do
   let!(:survey) { create :survey }

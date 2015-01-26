@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe HelenaAdministration::DashboardController do
   routes { HelenaAdministration::Engine.routes }

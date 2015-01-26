@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe 'Dashboard' do
   scenario 'User visits the index page that links to the survey management'  do

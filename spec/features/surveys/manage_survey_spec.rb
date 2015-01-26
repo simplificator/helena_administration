@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe 'Surveys' do
   scenario 'Index site lists all surveys'  do

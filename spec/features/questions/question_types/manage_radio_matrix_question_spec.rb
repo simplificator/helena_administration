@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe 'Radio matrix question management' do
   let!(:survey) { create :survey }

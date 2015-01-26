@@ -1,7 +1,5 @@
 module HelenaAdministration
   class VersionsController < ApplicationController
-    respond_to :html
-
     before_action :load_survey, :add_breadcrumbs
     before_action :load_version, only: [:edit, :update, :show]
 

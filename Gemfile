@@ -42,4 +42,5 @@ group :development, :test do
   gem 'ffaker', '~> 1.23'
   gem 'binding_of_caller'
   gem 'rspec-core'
+  gem 'responders', '~> 2.0'
 end
