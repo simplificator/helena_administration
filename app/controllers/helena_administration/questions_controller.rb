@@ -1,5 +1,7 @@
 module HelenaAdministration
   class QuestionsController < ApplicationController
+    respond_to :html
+
     before_action :load_question_group, :add_breadcrumbs
     before_action :load_question, only: [:destroy, :edit, :update, :show]
 
