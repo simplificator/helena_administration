@@ -16,6 +16,7 @@ HelenaAdministration::Engine.routes.draw do
           resources :radio_groups, module: 'questions'
           resources :checkbox_groups, module: 'questions'
           resources :radio_matrices, module: 'questions'
+          resources :bipolar_radio_matrices, module: 'questions'
           resources :checkbox_matrices, module: 'questions'
         end
       end
