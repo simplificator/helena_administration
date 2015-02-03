@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'simple_form', '~> 3.1.0.rc2'
   s.add_dependency 'breadcrumbs_on_rails', '~> 2.3'
   s.add_dependency 'rails-i18n', '~> 4.0'
-  s.add_runtime_dependency 'font-awesome-rails', '~> 4.2'
+  s.add_runtime_dependency 'font-awesome-sass', '~> 4.3.0'
   s.add_runtime_dependency 'coffee-rails', '~> 4.1'
   s.add_dependency 'responders', '~> 2.0'
 end
