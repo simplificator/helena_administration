@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.files        = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {spec}/*`.split("\n")
 
-  s.add_runtime_dependency 'kaminari', '~> 0.16'
+  # s.add_runtime_dependency 'kaminari', '~> 0.16'
   s.add_runtime_dependency 'rails', '~> 4.1'
   s.add_runtime_dependency 'slim-rails', '~> 3.0'
   s.add_runtime_dependency 'codemirror-rails', '~> 4.5'

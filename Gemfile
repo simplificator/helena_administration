@@ -15,10 +15,10 @@ gemspec
 
 gem 'helena', '~> 1.0.0.rc2',
   git: 'https://github.com/gurix/helena.git'
-  #path: '../helena/'
+  # path: '../helena/'
 
 gem 'compass-h5bp', group: :assets
-
+gem 'kaminari', git: 'https://github.com/amatsuda/kaminari.git'
 group :development, :test do
   gem 'better_errors'
   gem 'quiet_assets'
