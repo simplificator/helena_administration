@@ -18,7 +18,7 @@ module HelenaAdministration
       @question = @question_group.questions.build question_params
       if @question.save
         flash[:success] = t 'shared.actions.created'
-        respond_with [@survey, @version, @question_group, @question]
+        respond_with @question, location: [@survey, @version, @question_group, @question]
       else
         flash[:danger] = t 'shared.actions.error'
         render 'new'

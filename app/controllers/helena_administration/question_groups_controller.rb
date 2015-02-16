@@ -21,7 +21,7 @@ module HelenaAdministration
       else
         flash.now[:danger] = t 'shared.actions.error'
       end
-      respond_with [@survey, @version, @question_group]
+      respond_with @question_group, location: [@survey, @version, @question_group]
     end
 
     def edit
@@ -35,7 +35,7 @@ module HelenaAdministration
         flash.now[:danger] = t 'shared.actions.error'
         add_breadcrumb @question_group.title_was
       end
-      respond_with [@survey, @version, @question_group]
+      respond_with @question_group, location: [@survey, @version, @question_group]
     end
 
     def destroy
