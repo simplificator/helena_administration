@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'haml-rails', '~> 0.5'
   s.add_runtime_dependency 'html5-rails', '~> 0.1'
   s.add_dependency 'jquery-rails', '~> 3.1'
-  s.add_runtime_dependency 'sass-rails', '~> 4.0'
+  s.add_runtime_dependency 'sass-rails', '~> 5.0'
   s.add_dependency 'bootstrap-sass', '~> 3.2'
   s.add_dependency 'simple_form', '~> 3.1.0.rc2'
   s.add_dependency 'breadcrumbs_on_rails', '~> 2.3'
