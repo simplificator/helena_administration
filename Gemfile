@@ -27,8 +27,6 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'mongoid-rspec'
   gem 'rspec-collection_matchers', '~> 1'
-  # Remove git dependency after 1.4.1 is released, see https://github.com/DatabaseCleaner/database_cleaner/pull/316
-  gem 'database_cleaner', git: 'https://github.com/DatabaseCleaner/database_cleaner.git'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'capybara'
