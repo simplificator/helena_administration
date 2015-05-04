@@ -1,4 +1,5 @@
 = simple_form_for [@survey, @version, @question_group, question] do |f|
+  = f.input :position
   = f.input :question_text
   = f.input :code, hint: t('shared.code_hint')
   = f.input :_type, collection: Helena::Question::TYPES.map { |type| [type.model_name.human, type] }

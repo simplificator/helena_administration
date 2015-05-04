@@ -33,6 +33,7 @@ describe 'Questions' do
 
     fill_in 'Code', with: 'a38'
     fill_in 'Question text', with: 'Shall we go?'
+    fill_in 'Position', with: 32
 
     within '.breadcrumbs' do
       expect(page).to have_text 'New question'
@@ -58,11 +59,13 @@ describe 'Questions' do
 
     fill_in 'Question text', with: 'Are you sure?'
     fill_in 'Code', with: 'b12'
+    fill_in 'Position', with: 42
 
     click_button 'Save'
 
     expect(question.reload.question_text).to eq 'Are you sure?'
     expect(question.reload.code).to eq 'b12'
+    expect(question.reload.position).to eq 42
   end
 
   scenario 'edits a question errors when code text is empty' do
