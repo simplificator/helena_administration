@@ -35,16 +35,13 @@ Add the following line to your routes to include administration in your App
 mount HelenaAdministration::Engine, at: '/admin'
 ```
 
-HelenaAdministration::ApplicationController calls by default the `can_administer?` method that is not implemented by default, you have to define a decorator under `yourapp/app/decorators/controllers/helena_administration/application_controller_decorators.rb`. i.e your `current_user` has an `admin?` attribute.
+To protect you can use i.e devise. See https://github.com/plataformatec/devise/wiki/How-To:-Define-resource-actions-that-require-authentication-using-routes.rb
 
 ```ruby
-HelenaAdministration::ApplicationController.class_eval do
-  def can_administer?
-    current_user.admin? if current_user
-  end
+authenticate :user do
+  mount HelenaAdministration::Engine, at: '/admin'
 end
-
-```  
+```
 
 ## Contributing
 
