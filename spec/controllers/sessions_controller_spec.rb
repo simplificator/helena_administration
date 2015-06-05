@@ -4,6 +4,8 @@ describe HelenaAdministration::SessionsController do
   routes { HelenaAdministration::Engine.routes }
 
   let(:survey) { create :survey }
+  let(:version) { survey.versions.create version: 0 }
+  let(:question_group) { version.question_groups.create title: 'Abakadabara' }
 
   context 'without authorization' do
     before { allow_any_instance_of(HelenaAdministration::ApplicationController).to receive(:can_administer?).and_return false }
@@ -23,6 +25,12 @@ describe HelenaAdministration::SessionsController do
 
   context 'with authorization' do
     before do
+      question_group.questions.create code: 'string_answer_1', question_text: 'Yo!', _type: Helena::Questions::LongText
+      question_group.questions.create code: 'integer_answer_1', question_text: 'Bo', _type: Helena::Questions::ShortText
+
+      question_group.questions.create code: 'string_answer_2', question_text: 'Hip', _type: Helena::Questions::LongText
+      question_group.questions.create code: 'integer_answer_2', question_text: 'Hop', _type: Helena::Questions::ShortText
+
       create :session, survey: survey, answers: [
         build(:string_answer, code: 'string_answer_1', value: 'abc'),
         build(:integer_answer, code: 'integer_answer_1', value: '123')
@@ -87,6 +95,8 @@ describe HelenaAdministration::SessionsController do
     end
 
     specify 'csv header for all sessions does not allow same column names for answers and session fields' do
+      question_group.questions.create code: 'completed', question_text: 'Good', _type: Helena::Questions::LongText
+      question_group.questions.create code: 'token', question_text: 'Point', _type: Helena::Questions::ShortText
       create :session, survey: survey, answers: [
         build(:boolean_answer, code: 'completed', value: true),
         build(:string_answer, code: 'token', value: 'abcdefghijklmnopqrstuvwxyz')

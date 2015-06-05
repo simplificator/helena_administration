@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/gurix/helena.git
-  revision: 14820503dbabd5b4ddfa2588b7a4780ced002e0f
+  revision: 2bf815672d5dcf9f8301d14504f3e5996a295f8e
   specs:
     helena (1.0.0.rc2)
       bootstrap-sass (~> 3.2)
@@ -100,7 +100,7 @@ GEM
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
     breadcrumbs_on_rails (2.3.0)
-    bson (2.3.0)
+    bson (3.0.4)
     builder (3.2.2)
     byebug (3.5.1)
       columnize (~> 0.8)
@@ -202,8 +202,8 @@ GEM
       mongoid (>= 3.0.3)
     mongoid_orderable (4.1.1)
       mongoid
-    moped (2.0.4)
-      bson (~> 2.2)
+    moped (2.0.5)
+      bson (~> 3.0.4)
       connection_pool (~> 2.0)
       optionable (~> 0.2.0)
     multi_json (1.11.0)
@@ -304,7 +304,7 @@ GEM
       slim (~> 3.0)
     slop (3.6.0)
     spork (0.9.2)
-    sprockets (3.1.0)
+    sprockets (3.2.0)
       rack (~> 1.0)
     sprockets-rails (2.3.1)
       actionpack (>= 3.0)
