@@ -3,6 +3,8 @@ module HelenaAdministration
   class SessionsController < ApplicationController
     include ActionController::Live
 
+    respond_to :html, :json, :csv
+
     before_filter :load_survey, :add_breadcrumbs
     before_filter :load_session, only: [:edit, :update, :destroy]
 

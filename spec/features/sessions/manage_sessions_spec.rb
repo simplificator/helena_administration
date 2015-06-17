@@ -47,5 +47,7 @@ describe 'Sessions' do
     expect(session.reload.answers.map(&:value)).to eq ['c', 4]
     expect(session.reload.completed).to eq true
     expect(session.reload.last_question_group_id).to eq second_question_group.id
+
+    expect(page).not_to have_content 'RuntimeError'
   end
 end
