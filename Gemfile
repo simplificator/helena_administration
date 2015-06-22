@@ -36,7 +36,7 @@ group :development, :test do
   gem 'autotest-rails-pure', require: false
   gem 'autotest-fsevent',    require: false
   gem 'autotest-growl',      require: false
-  gem 'ffaker', '~> 1.23'
+  gem 'faker'
   gem 'binding_of_caller'
   gem 'rspec-core'
   gem 'responders', '~> 2.0'
