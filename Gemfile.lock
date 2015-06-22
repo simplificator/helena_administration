@@ -21,7 +21,7 @@ GIT
 PATH
   remote: .
   specs:
-    helena_administration (0.0.4)
+    helena_administration (0.0.5)
       bootstrap-sass (~> 3.2)
       breadcrumbs_on_rails (~> 2.3)
       codemirror-rails (~> 5)
