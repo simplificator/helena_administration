@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {spec}/*`.split("\n")
 
   s.add_runtime_dependency 'kaminari', '~> 0.16'
-  s.add_runtime_dependency 'rails', '~> 4.1'
+  s.add_runtime_dependency 'rails', '~> 4.2'
   s.add_runtime_dependency 'slim-rails', '~> 3.0'
   s.add_runtime_dependency 'codemirror-rails', '~> 4.5'
   s.add_dependency 'mongoid', '~> 4.0'
@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'mongoid-simple-tags', '~> 0.1'
   s.add_dependency 'haml-rails', '~> 0.5'
   s.add_runtime_dependency 'html5-rails', '~> 0.1'
-  s.add_dependency 'jquery-rails', '~> 3.1'
+  s.add_dependency 'jquery-rails', '~> 4'
   s.add_runtime_dependency 'sass-rails', '~> 5.0'
   s.add_dependency 'bootstrap-sass', '~> 3.2'
   s.add_dependency 'simple_form', '~> 3.1.0.rc2'
