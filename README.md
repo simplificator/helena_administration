@@ -1,6 +1,7 @@
 [![Build Status](https://img.shields.io/travis/gurix/helena_administration/master.svg?style=flat)](https://travis-ci.org/gurix/helena_administration)
 [![Code Climate](https://img.shields.io/codeclimate/github/gurix/helena_administration.svg?style=flat)](https://codeclimate.com/github/gurix/helena_administration)
 [![Dependency Status](https://img.shields.io/gem/v/helena_administration.svg?style=flat)](https://rubygems.org/gems/helena_administration)
+[![Dependency Status](https://gemnasium.com/gurix/helena_administration.svg)](https://gemnasium.com/gurix/helena_administration)
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/gurix/helena?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Helena Administration
