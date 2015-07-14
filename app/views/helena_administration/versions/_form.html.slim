@@ -6,7 +6,8 @@
   = f.input :session_report, as: :text, hint: t('.slim_lang_hint_html'), input_html: { cols: 60, rows: 10, class: 'slim_lang' }
   - if f.object.persisted?
     = f.input :active, as: :boolean
-
+  - else
+    = f.input :parent, collection: f.object.ancestors_and_self, label_method: ->(v){ "#{v.survey.name} #{v.version} #{v.notes}" if v.present?}, include_blank: true, selected: -> (v) { v.parent }
   = f.simple_fields_for :settings do |setting|
     = setting.input :display_progressbar, as:         :boolean,
                                           label:      t('.display_progressbar'),
