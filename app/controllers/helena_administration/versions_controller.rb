@@ -10,14 +10,18 @@ module HelenaAdministration
     end
 
     def new
+      source_version = @survey.newest_version
       @version = @survey.versions.any? ? @survey.versions.build(source_version.attributes) : @survey.versions.build
+      @version.parent = source_version
       @version.survey_detail = (@version.try(:survey_detail) || Helena::SurveyDetail.new)
       @version.notes = ''
       add_breadcrumb t('.new'), new_survey_version_path(@survey)
     end
 
     def create
-      build_version && @version.update_attributes(version_params)
+      @version = build_version
+      @version.update_attributes(version_params)
+
       if @version.save
         flash[:success] = t 'shared.actions.created'
       else
@@ -64,19 +68,16 @@ module HelenaAdministration
     end
 
     def version_params
-      params.require(:version).permit(:notes, :session_report, :active, settings: [:display_progressbar], survey_detail_attributes: [:title, :description])
+      params.require(:version).permit(:parent, :notes, :session_report, :active,
+                                      settings: [:display_progressbar], survey_detail_attributes: [:title, :description])
     end
 
     def build_version
-      if source_version
-        @version = Helena::VersionPublisher.publish(source_version)
-      else
-        @version = @survey.versions.build
-      end
-    end
-
-    def source_version
-      @survey.newest_version
+      @version = if version_params[:parent].present?
+                   Helena::VersionPublisher.publish(@survey.versions.find(version_params[:parent]))
+                 else
+                   @survey.versions.build version: (@survey.newest_version.version + 1)
+                 end
     end
   end
 end
