@@ -54,7 +54,7 @@ module HelenaAdministration
 
       # .. and generate a line for each session.
       @sessions.each do |session|
-        response.stream.write CSV.generate_line(session_values(session) + [session.version.version] + answer_values(session, question_codes))
+        response.stream.write CSV.generate_line(session_values(session) + [session.version.version] + answer_values(session))
       end
     ensure
       response.stream.close
@@ -64,8 +64,9 @@ module HelenaAdministration
       session_fields.map { |field| session.attributes[field] }
     end
 
-    def answer_values(session, answer_codes)
-      answer_codes.map  { |code|  session.answers.where(code: code).first.try(&:value) }
+    def answer_values(session)
+      answers = Hash[session.answers.map { |answer| [answer.code, answer.value] }]
+      question_codes.map  { |code|  answers[code] }
     end
 
     def add_breadcrumbs
@@ -98,7 +99,7 @@ module HelenaAdministration
     end
 
     def session_fields
-      Helena::Session.fields.keys
+      @session_fields ||= Helena::Session.fields.keys
     end
   end
 end
