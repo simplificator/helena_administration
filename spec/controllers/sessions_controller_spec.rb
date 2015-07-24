@@ -14,11 +14,11 @@ describe HelenaAdministration::SessionsController do
     question_group.questions.create code: 'string_answer_2', question_text: 'Hip', _type: Helena::Questions::LongText
     question_group.questions.create code: 'integer_answer_2', question_text: 'Hop', _type: Helena::Questions::ShortText
 
-    create :session, survey: survey, answers: [
+    create :session, survey: survey, version: version, answers: [
       build(:string_answer, code: 'string_answer_1', value: 'abc'),
       build(:integer_answer, code: 'integer_answer_1', value: '123')
     ]
-    create :session, survey: survey, answers: [
+    create :session, survey: survey, version: version, answers: [
       build(:string_answer, code: 'string_answer_2', value: 'def, xyz'),
       build(:integer_answer, code: 'integer_answer_2', value: '456')
     ]
@@ -80,7 +80,7 @@ describe HelenaAdministration::SessionsController do
   specify 'csv header for all sessions does not allow same column names for answers and session fields' do
     question_group.questions.create code: 'completed', question_text: 'Good', _type: Helena::Questions::LongText
     question_group.questions.create code: 'token', question_text: 'Point', _type: Helena::Questions::ShortText
-    create :session, survey: survey, answers: [
+    create :session, survey: survey, version: version, answers: [
       build(:boolean_answer, code: 'completed', value: true),
       build(:string_answer, code: 'token', value: 'abcdefghijklmnopqrstuvwxyz')
     ]

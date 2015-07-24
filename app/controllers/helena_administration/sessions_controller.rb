@@ -50,11 +50,11 @@ module HelenaAdministration
       response.headers['Content-Type'] = 'text/csv'
 
       # Write csv header once ...
-      response.stream.write CSV.generate_line(session_fields + question_codes)
+      response.stream.write CSV.generate_line(session_fields + ['version'] + question_codes)
 
       # .. and generate a line for each session.
       @sessions.each do |session|
-        response.stream.write CSV.generate_line(session_values(session) + answer_values(session, question_codes))
+        response.stream.write CSV.generate_line(session_values(session) + [session.version.version] + answer_values(session, question_codes))
       end
     ensure
       response.stream.close
