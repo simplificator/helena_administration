@@ -92,7 +92,7 @@ module HelenaAdministration
 
     # It could be possible that an answer code equals a session field. We add "answer_" in that case so that we get uniqe question codes for sure
     def unique_question_codes
-      codes = @survey.versions.map(&:question_codes).flatten
+      codes = @survey.versions.map(&:question_codes).flatten.uniq
       codes.map do |code|
         session_fields.include?(code) ? "answer_#{code}" : code
       end

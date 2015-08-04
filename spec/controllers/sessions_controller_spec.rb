@@ -91,4 +91,29 @@ describe HelenaAdministration::SessionsController do
       expect(csv.first).to include code
     end
   end
+
+  it 'only includes a column name once in a csv header' do
+    question_group.questions.create code: 'bla', question_text: 'from first version', _type: Helena::Questions::LongText
+
+    new_version = survey.versions.create version: 1
+    new_question_group = new_version.question_groups.create title: 'Abakadabara'
+
+    new_question_group.questions.create code: 'bla', question_text: 'from second version', _type: Helena::Questions::LongText
+    new_question_group.questions.create code: 'bli', question_text: 'something else', _type: Helena::Questions::ShortText
+
+    create :session, survey: survey, version: version, answers: [
+      build(:string_answer, code: 'bla', value: 'xxx')
+    ]
+    create :session, survey: survey, version: new_version, answers: [
+      build(:string_answer, code: 'bla', value: 'yyy'),
+      build(:string_answer, code: 'bli', value: 'asdfasdfasdf')
+    ]
+    get :index, survey_id: survey, format: :csv
+
+    csv = CSV.parse(response.body)
+
+    amount_of_blas_in_header = csv.first.count { |code| code == 'bla' }
+
+    expect(amount_of_blas_in_header).to eq 1
+  end
 end
