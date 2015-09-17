@@ -16,6 +16,8 @@ Mongoid.configure do |config|
   config.connect_to('helena_adminstration_test')
 end
 
+Mongo::Logger.logger.level= Logger::WARN # Set log level to DEBUG to see everything
+
 ENGINE_RAILS_ROOT = File.join(File.dirname(__FILE__), '../')
 Dir[File.join(ENGINE_RAILS_ROOT, 'spec/support/**/*.rb')].each { |f| require f }
 
