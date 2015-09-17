@@ -6,7 +6,6 @@ require File.expand_path('../dummy/config/environment.rb',  __FILE__)
 
 require 'rspec/rails'
 require 'factory_girl_rails'
-require 'database_cleaner'
 require 'mongoid-rspec'
 require 'capybara/rspec'
 require 'rspec/collection_matchers'
@@ -31,13 +30,7 @@ RSpec.configure do |config|
   config.order = :random
   config.profile_examples = 30
 
-  DatabaseCleaner.strategy = :truncation
-
-  config.before(:each) do
-    DatabaseCleaner.start
-  end
-
   config.after(:each) do
-    DatabaseCleaner.clean
+    Mongoid.purge!
   end
 end

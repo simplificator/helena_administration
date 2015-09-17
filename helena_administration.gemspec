@@ -35,6 +35,4 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'font-awesome-sass', '~> 4.3.0'
   s.add_runtime_dependency 'coffee-rails', '~> 4.1'
   s.add_dependency 'responders', '~> 2.0'
-  
-  s.add_development_dependency 'database_cleaner', '~> 1.3'
 end
