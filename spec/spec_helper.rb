@@ -12,12 +12,12 @@ require 'rspec/collection_matchers'
 require 'dotenv'
 Dotenv.load
 
-ENGINE_RAILS_ROOT = File.join(File.dirname(__FILE__), '../')
-Dir[File.join(ENGINE_RAILS_ROOT, 'spec/support/**/*.rb')].each { |f| require f }
-
 Mongoid.configure do |config|
   config.connect_to('helena_adminstration_test')
 end
+
+ENGINE_RAILS_ROOT = File.join(File.dirname(__FILE__), '../')
+Dir[File.join(ENGINE_RAILS_ROOT, 'spec/support/**/*.rb')].each { |f| require f }
 
 RSpec.configure do |config|
   config.include HelenaAdministration::Engine.routes.url_helpers
