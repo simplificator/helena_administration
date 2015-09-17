@@ -36,7 +36,7 @@ describe 'Versions ' do
 
     expect { click_button 'Save' }.to change { survey.reload.versions.count }.by(1)
 
-    new_version = survey.reload.versions.last
+    new_version = survey.versions.sort.last
 
     expect(new_version.survey_detail.title).to eq 'Everybody lies'
     expect(new_version.survey_detail.description).to eq 'but shoes always tell the truth'

@@ -21,7 +21,6 @@ module HelenaAdministration
     def create
       @version = build_version
       @version.update_attributes(version_params)
-
       if @version.save
         flash[:success] = t 'shared.actions.created'
       else
@@ -69,7 +68,8 @@ module HelenaAdministration
 
     def version_params
       params.require(:version).permit(:parent, :notes, :session_report, :active,
-                                      settings: [:display_progressbar], survey_detail_attributes: [:title, :description])
+                                      settings: [:display_progressbar],
+                                      survey_detail_attributes: [:title, :description])
     end
 
     def build_version
