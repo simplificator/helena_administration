@@ -1,6 +1,0 @@
-development:
-  clients:
-    default:
-      database: helena_adminstration_dev
-      hosts:
-        - localhost:27017
