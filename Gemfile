@@ -17,9 +17,6 @@ gemspec
 gem 'helena', git: 'https://github.com/gurix/helena.git', branch: 'feature/support-mongoid-5.0'
 # gem 'helena', path: '../helena/'
 
-# TODO: remove this after https://github.com/benedikt/mongoid-tree/pull/61 is merged
-gem 'mongoid-tree', github: 'gurix/mongoid-tree', branch: 'mongoid-5.0'
-
 gem 'compass-h5bp', group: :assets
 group :development, :test do
   gem 'better_errors'
