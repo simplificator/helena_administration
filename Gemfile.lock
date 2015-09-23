@@ -1,25 +1,3 @@
-GIT
-  remote: https://github.com/gurix/helena.git
-  revision: 338045701e622c158df203b7aa20f3c250b43d89
-  branch: feature/support-mongoid-5.0
-  specs:
-    helena (1.0.0.rc5)
-      bootstrap-sass (~> 3.2)
-      breadcrumbs_on_rails (~> 2.3)
-      browser (> 0.4)
-      haml-rails (~> 0.9)
-      jquery-rails (~> 4.0)
-      mongoid (>= 4.0, < 6.0)
-      mongoid-simple-tags (~> 0.1)
-      mongoid-tree (~> 2.0)
-      mongoid_orderable (~> 4.1)
-      rails (~> 4.2)
-      rails-i18n (~> 4.0)
-      responders (~> 2.0)
-      sass-rails (~> 5.0)
-      simple_form (~> 3.1.0.rc2)
-      slim (~> 3.0)
-
 PATH
   remote: .
   specs:
@@ -30,6 +8,7 @@ PATH
       coffee-rails (~> 4.1)
       font-awesome-sass (~> 4.3.0)
       haml-rails (~> 0.5)
+      helena (~> 1.0.0)
       html5-rails (~> 0.1)
       jquery-rails (~> 4)
       kaminari (~> 0.16)
@@ -169,6 +148,22 @@ GEM
       haml (>= 4.0.6, < 5.0)
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
+    helena (1.0.0)
+      bootstrap-sass (~> 3.2)
+      breadcrumbs_on_rails (~> 2.3)
+      browser (> 0.4)
+      haml-rails (~> 0.9)
+      jquery-rails (~> 4.0)
+      mongoid (>= 4.0, < 6.0)
+      mongoid-simple-tags (~> 0.1)
+      mongoid-tree (~> 2.0)
+      mongoid_orderable (~> 4.1)
+      rails (~> 4.2)
+      rails-i18n (~> 4.0)
+      responders (~> 2.0)
+      sass-rails (~> 5.0)
+      simple_form (~> 3.1.0.rc2)
+      slim (~> 3.0)
     html2haml (2.0.0)
       erubis (~> 2.7.0)
       haml (~> 4.0.0)
@@ -348,7 +343,6 @@ DEPENDENCIES
   dotenv-rails
   factory_girl_rails
   faker
-  helena!
   helena_administration!
   launchy
   mongoid-rspec

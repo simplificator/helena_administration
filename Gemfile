@@ -10,13 +10,6 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-# To use debugger
-# gem 'debugger'
-
-# gem 'helena', '~> 1.0.0.rc3'
-gem 'helena', git: 'https://github.com/gurix/helena.git', branch: 'feature/support-mongoid-5.0'
-# gem 'helena', path: '../helena/'
-
 gem 'compass-h5bp', group: :assets
 group :development, :test do
   gem 'better_errors'
