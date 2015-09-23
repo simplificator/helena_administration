@@ -1,12 +1,12 @@
 GIT
   remote: https://github.com/gurix/helena.git
-  revision: 58a13678783dbddb8b98a4e2e99b363e22adfae8
+  revision: 338045701e622c158df203b7aa20f3c250b43d89
   branch: feature/support-mongoid-5.0
   specs:
     helena (1.0.0.rc5)
       bootstrap-sass (~> 3.2)
       breadcrumbs_on_rails (~> 2.3)
-      browser (~> 0.8)
+      browser (> 0.4)
       haml-rails (~> 0.9)
       jquery-rails (~> 4.0)
       mongoid (>= 4.0, < 6.0)
@@ -103,7 +103,7 @@ GEM
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.3.0)
     breadcrumbs_on_rails (2.3.1)
-    browser (0.9.1)
+    browser (1.0.1)
     bson (3.2.4)
     builder (3.2.2)
     byebug (5.0.0)
