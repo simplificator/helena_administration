@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Question groups' do
+feature 'Question groups' do
   let!(:survey) { create :survey }
   let!(:version) { survey.versions.create version: 0 }
 

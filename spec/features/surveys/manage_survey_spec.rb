@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Surveys' do
+feature 'Surveys' do
   scenario 'Index site lists all surveys'  do
     create :survey, name: 'Innerbetriebliche Zufriedenheit', position: 2
     create :survey, name: 'Life satisfaction scale', position: 1

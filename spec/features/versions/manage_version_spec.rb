@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Versions ' do
+feature 'Versions ' do
   let!(:survey) { create :survey }
   let!(:baseversion) { survey.versions.create version: 0 }
 

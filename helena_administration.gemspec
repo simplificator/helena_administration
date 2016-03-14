@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'jquery-rails', '~> 4'
   s.add_runtime_dependency 'sass-rails', '~> 5.0'
   s.add_dependency 'bootstrap-sass', '~> 3.2'
-  s.add_dependency 'simple_form', '~> 3.1.0.rc2'
+  s.add_dependency 'simple_form', '~> 3.2'
   s.add_dependency 'breadcrumbs_on_rails', '~> 2.3'
   s.add_dependency 'rails-i18n', '~> 4.0'
   s.add_runtime_dependency 'font-awesome-sass', '~> 4.4'

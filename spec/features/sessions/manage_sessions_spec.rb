@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Sessions' do
+feature 'Sessions' do
   let(:survey) { create :survey }
   let!(:version) { survey.versions.create }
 
