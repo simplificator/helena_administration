@@ -19,8 +19,6 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'dotenv-rails'
   gem 'mongoid-rspec'
-  gem 'rspec-collection_matchers', '~> 1'
-  gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'launchy'
@@ -31,6 +29,5 @@ group :development, :test do
   gem 'autotest-growl',      require: false
   gem 'faker'
   gem 'binding_of_caller'
-  gem 'rspec-core'
   gem 'responders', '~> 2.0'
 end

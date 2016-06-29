@@ -36,4 +36,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'font-awesome-sass', '~> 4.4'
   s.add_runtime_dependency 'coffee-rails', '~> 4.1'
   s.add_dependency 'responders', '~> 2.0'
+  
+  s.add_development_dependency 'rspec-rails', '~> 3'
+  s.add_development_dependency 'rspec-collection_matchers', '~> 1'
 end
