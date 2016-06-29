@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    helena_administration (0.2.3)
+    helena_administration (0.3.0)
       bootstrap-sass (~> 3.2)
       breadcrumbs_on_rails (~> 2.3)
       codemirror-rails (~> 5)
@@ -283,6 +283,7 @@ GEM
       rspec-core (~> 2.99.0)
       rspec-expectations (~> 2.99.0)
       rspec-mocks (~> 2.99.0)
+    rspec-support (3.5.0.beta4)
     ruby_parser (3.8.2)
       sexp_processor (~> 4.1)
     sass (3.4.22)
