@@ -1,0 +1,16 @@
+source 'https://rubygems.org'
+
+gemspec path: '../'
+
+gem 'mongoid', '~> 6.0.0.rc0'
+gem 'helena', github: 'gurix/helena', branch: 'rails5'
+
+group :development, :test do
+  gem 'pry'
+  gem 'simplecov'
+  gem 'pry-byebug'
+  gem 'mongoid-rspec'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'faker'
+end

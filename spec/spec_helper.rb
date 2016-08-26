@@ -9,8 +9,6 @@ require 'factory_girl_rails'
 require 'mongoid-rspec'
 require 'capybara/rspec'
 require 'rspec/collection_matchers'
-require 'dotenv'
-Dotenv.load
 
 Mongoid.configure do |config|
   config.connect_to('helena_adminstration_test')

@@ -5,8 +5,8 @@ module HelenaAdministration
 
     respond_to :html, :json, :csv
 
-    before_filter :load_survey, :add_breadcrumbs
-    before_filter :load_session, only: [:edit, :update, :destroy]
+    before_action :load_survey, :add_breadcrumbs
+    before_action :load_session, only: [:edit, :update, :destroy]
 
     def index
       respond_to do |format|
