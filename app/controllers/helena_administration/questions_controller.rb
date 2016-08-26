@@ -79,7 +79,7 @@ module HelenaAdministration
     end
 
     def question_params
-      required_param.permit(permited_params + [:position, :question_text,  :code, :_type])
+      required_param.permit(permited_params + [:position, :question_text, :code, :_type])
     end
 
     def permited_params

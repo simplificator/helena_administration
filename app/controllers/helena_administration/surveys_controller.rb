@@ -62,8 +62,6 @@ module HelenaAdministration
       add_breadcrumb Helena::Survey.model_name.human(count: 2), surveys_path
     end
 
-    private
-
     def survey_params
       params.require(:survey).permit(:name, :tag_list, :language)
     end

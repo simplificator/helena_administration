@@ -66,7 +66,7 @@ module HelenaAdministration
 
     def answer_values(session)
       answers = Hash[session.answers.map { |answer| [answer.code, answer.value] }]
-      question_codes.map  { |code|  answers[code] }
+      question_codes.map { |code| answers[code] }
     end
 
     def add_breadcrumbs

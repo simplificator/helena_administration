@@ -91,7 +91,7 @@ feature 'Versions ' do
   end
 
   scenario 'User can view version details' do
-    version =  survey.versions.create notes: 'Awesome new version', version: 666, session_report: 'AbCdE'
+    version = survey.versions.create notes: 'Awesome new version', version: 666, session_report: 'AbCdE'
     version.survey_detail = Helena::SurveyDetail.new title: 'Piracy', description: 'Typically an act of robbery or criminal violence at sea.'
 
     visit survey_version_path(survey, version)

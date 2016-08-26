@@ -64,7 +64,7 @@ describe HelenaAdministration::SessionsController do
     get :index, params: { survey_id: survey }, survey_id: survey, format: :csv
 
     csv = CSV.parse(response.body)
-    %w(string_answer_2  integer_answer_2 string_answer_1 integer_answer_1).each do |code|
+    %w(string_answer_2 integer_answer_2 string_answer_1 integer_answer_1).each do |code|
       expect(csv.first).to include code
     end
 
@@ -87,7 +87,7 @@ describe HelenaAdministration::SessionsController do
     get :index, params: { survey_id: survey }, survey_id: survey, format: :csv
 
     csv = CSV.parse(response.body)
-    %w(answer_token  answer_completed).each do |code|
+    %w(answer_token answer_completed).each do |code|
       expect(csv.first).to include code
     end
   end

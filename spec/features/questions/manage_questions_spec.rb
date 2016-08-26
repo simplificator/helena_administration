@@ -5,7 +5,7 @@ feature 'Questions' do
   let!(:version) { survey.versions.create version: 0 }
   let!(:question_group) { version.question_groups.create title: 'Abakadabara' }
 
-  scenario 'Index site lists all questions'  do
+  scenario 'Index site lists all questions' do
     question_group.questions.create code: 'second_question', question_text: 'Second question', position: 123, _type: Helena::Questions::LongText
     question_group.questions.create code: 'first_question', question_text: 'First question', position: 42, _type: Helena::Questions::ShortText
 
