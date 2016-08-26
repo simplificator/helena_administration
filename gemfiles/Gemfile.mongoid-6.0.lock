@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/gurix/helena.git
-  revision: 6d792dc4d43a4053b32f8a366ba5b1a58edd8175
+  revision: c722c6da5d79e723be05287b31a65aea26df5983
   branch: rails5
   specs:
     helena (1.2.0)

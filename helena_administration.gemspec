@@ -36,7 +36,4 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails-i18n', '>= 4.0'
   s.add_dependency 'font-awesome-sass', '>= 4.4'
   s.add_dependency 'coffee-rails', '>= 4.2.1'
-  
-  s.add_development_dependency 'rspec-rails', '>= 3'
-  s.add_development_dependency 'rspec-collection_matchers', '>= 1'
 end
