@@ -22,11 +22,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'launchy'
-  gem 'spork'
-  gem 'autotest',            require: false
-  gem 'autotest-rails-pure', require: false
-  gem 'autotest-fsevent',    require: false
-  gem 'autotest-growl',      require: false
   gem 'faker'
   gem 'binding_of_caller'
   gem 'responders', '~> 2.0'
