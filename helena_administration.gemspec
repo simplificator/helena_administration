@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'slim-rails', '>= 3.0'
   s.add_runtime_dependency 'codemirror-rails', '>= 5'
   s.add_dependency 'helena', '~> 1.1'
-  s.add_dependency 'mongoid', ['< 6.0', '>= 4.0']
+  s.add_dependency 'mongoid', ['>= 4.0']
   s.add_dependency 'mongoid_orderable', '~> 4.1'
   s.add_dependency 'mongoid-simple-tags', '~> 0.1'
   s.add_dependency 'haml-rails', '>= 0.5'
