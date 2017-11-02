@@ -17,7 +17,6 @@ feature 'Versions ' do
 
   scenario 'User publish a new version' do
     visit survey_path(survey)
-
     within 'table.versions' do
       click_link 'New'
     end

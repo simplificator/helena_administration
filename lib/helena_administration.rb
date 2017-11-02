@@ -9,7 +9,8 @@ require 'helena'
 require 'mongoid'
 require 'mongoid_orderable'
 require 'mongoid-simple-tags'
-require 'kaminari'
+require 'kaminari/mongoid'
+require 'kaminari/actionview'
 
 module HelenaAdministration
 end

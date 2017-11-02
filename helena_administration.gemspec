@@ -17,15 +17,16 @@ Gem::Specification.new do |s|
   s.files        = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {spec}/*`.split("\n")
 
-  s.add_runtime_dependency 'kaminari-mongoid', '~> 0.1.2'
-  s.add_runtime_dependency 'rails', '~> 4.2'
-  s.add_runtime_dependency 'slim-rails', '~> 3.0'
-  s.add_runtime_dependency 'codemirror-rails', '~> 5'
-  s.add_dependency 'helena', '~> 1.0'
+  s.add_runtime_dependency 'kaminari-mongoid'
+  s.add_runtime_dependency 'kaminari-actionview'
+  s.add_runtime_dependency 'rails', '>= 4.2'
+  s.add_runtime_dependency 'slim-rails', '>= 3.0'
+  s.add_runtime_dependency 'codemirror-rails', '>= 5'
+  s.add_dependency 'helena', '~> 1.1'
   s.add_dependency 'mongoid', ['< 6.0', '>= 4.0']
   s.add_dependency 'mongoid_orderable', '~> 4.1'
   s.add_dependency 'mongoid-simple-tags', '~> 0.1'
-  s.add_dependency 'haml-rails', '~> 0.5'
+  s.add_dependency 'haml-rails', '>= 0.5'
   s.add_runtime_dependency 'html5-rails', '~> 0.1'
   s.add_dependency 'jquery-rails', '~> 4'
   s.add_runtime_dependency 'sass-rails', '~> 5.0'
