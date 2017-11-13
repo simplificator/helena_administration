@@ -22,7 +22,6 @@ group :development, :test do
   gem 'mongoid-rspec'
   gem 'pry'
   gem 'pry-byebug'
-  gem 'quiet_assets'
   gem 'responders', '~> 2.0'
   gem 'simplecov'
 end

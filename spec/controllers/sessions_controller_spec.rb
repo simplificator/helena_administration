@@ -25,7 +25,7 @@ describe HelenaAdministration::SessionsController do
   end
 
   it 'return json result of all sessions' do
-    get :index, survey_id: survey, format: :json
+    get :index, parametrize(survey_id: survey, format: :json)
 
     first_result = ActiveSupport::JSON.decode(response.body).first
 
@@ -43,7 +43,7 @@ describe HelenaAdministration::SessionsController do
   end
 
   it 'return json result of all sessions' do
-    get :index, survey_id: survey, format: :json
+    get :index, parametrize(survey_id: survey, format: :json)
 
     first_result = ActiveSupport::JSON.decode(response.body).first
 
@@ -61,7 +61,7 @@ describe HelenaAdministration::SessionsController do
   end
 
   it 'return csv result of all sessions' do
-    get :index, survey_id: survey, format: :csv
+    get :index, parametrize(survey_id: survey, format: :csv)
 
     csv = CSV.parse(response.body)
     %w(string_answer_2  integer_answer_2 string_answer_1 integer_answer_1).each do |code|
@@ -84,7 +84,7 @@ describe HelenaAdministration::SessionsController do
       build(:boolean_answer, code: 'completed', value: true),
       build(:string_answer, code: 'token', value: 'abcdefghijklmnopqrstuvwxyz')
     ]
-    get :index, survey_id: survey, format: :csv
+    get :index, parametrize(survey_id: survey, format: :csv)
 
     csv = CSV.parse(response.body)
     %w(answer_token  answer_completed).each do |code|
@@ -108,7 +108,8 @@ describe HelenaAdministration::SessionsController do
       build(:string_answer, code: 'bla', value: 'yyy'),
       build(:string_answer, code: 'bli', value: 'asdfasdfasdf')
     ]
-    get :index, survey_id: survey, format: :csv
+    
+    get :index, parametrize(survey_id: survey, format: :csv)
 
     csv = CSV.parse(response.body)
 
