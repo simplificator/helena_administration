@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    helena_administration (0.3.3)
+    helena_administration (0.3.4)
       bootstrap-sass (~> 3.2)
       breadcrumbs_on_rails (>= 3.0.1)
       codemirror-rails (>= 5)
