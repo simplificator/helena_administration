@@ -3,7 +3,7 @@ module HelenaAdministration
     respond_to :html
 
     before_action :load_question_group, :add_breadcrumbs
-    before_action :load_question, only: [:destroy, :edit, :update, :show]
+    before_action :load_question, only: %i[destroy edit update show]
 
     def show
       add_breadcrumb @question.code
@@ -71,23 +71,22 @@ module HelenaAdministration
     end
 
     def labels_attributes
-      [:id, :position, :text, :value, :preselected, :_destroy]
+      %i[id position text value preselected _destroy]
     end
 
     def sub_questions_attributes
-      [:id, :position, :code, :text, :value, :preselected, :_destroy]
+      %i[id position code text value preselected _destroy]
     end
 
     def question_params
-      required_param.permit(permited_params + [:position, :question_text,  :code, :_type])
+      required_param.permit(permited_params + %i[position question_text code _type])
     end
 
     def permited_params
       []
     end
 
-    def add_ressources
-    end
+    def add_ressources; end
 
     def required_param
       param_name = self.class == QuestionsController ? :question : "questions_#{controller_name.singularize}"

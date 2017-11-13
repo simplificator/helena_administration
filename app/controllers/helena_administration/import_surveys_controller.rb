@@ -15,7 +15,7 @@ module HelenaAdministration
           Helena::SurveyImporter.new @import_survey_form.script
           flash[:success] = t('shared.actions.created')
           redirect_to surveys_path
-        rescue => e
+        rescue StandardError => e
           @error = e
 
           render 'new'

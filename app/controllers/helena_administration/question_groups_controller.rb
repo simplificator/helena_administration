@@ -3,7 +3,7 @@ module HelenaAdministration
     respond_to :html
 
     before_action :load_version, :add_breadcrumbs
-    before_action :load_question_group, only: [:destroy, :edit, :update, :show]
+    before_action :load_question_group, only: %i[destroy edit update show]
 
     def show
       add_breadcrumb @question_group.title

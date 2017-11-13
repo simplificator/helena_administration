@@ -4,7 +4,7 @@ module HelenaAdministration
       private
 
       def permited_params
-        [:default_value, :required]
+        %i[default_value required]
       end
     end
   end

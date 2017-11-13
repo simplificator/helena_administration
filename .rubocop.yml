@@ -2,10 +2,11 @@ AllCops:
   Include:
     - '**/Rakefile'
     - '**/config.ru'
+    - '**/Gemfile'
   Exclude:
+    - helena_administration.gemspec
     - bin/**
-    - spec/dummy/db/schema.rb
-    - spec/dummy/config/initializers/secret_token.rb
+    - spec/**/*
     - db/migrate/**/*
     - db/seeds.rb
     - db/seeds/**/*

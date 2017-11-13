@@ -3,7 +3,7 @@ HelenaAdministration::Engine.routes.draw do
 
   root 'dashboard#index'
 
-  resource :import_survey, only: [:new, :create]
+  resource :import_survey, only: %i[new create]
   resources :surveys do
     resources :sessions
     resources :versions do

@@ -4,7 +4,7 @@ module HelenaAdministration
 
     before_action :add_breadcrumbs
 
-    before_action :load_resources, only: [:destroy, :edit, :update, :show]
+    before_action :load_resources, only: %i[destroy edit update show]
 
     def index
       @surveys = Helena::Survey.asc(:position)
@@ -61,8 +61,6 @@ module HelenaAdministration
       add_breadcrumb t('shared.navigation.dashboard'), dashboard_index_path
       add_breadcrumb Helena::Survey.model_name.human(count: 2), surveys_path
     end
-
-    private
 
     def survey_params
       params.require(:survey).permit(:name, :tag_list, :language)

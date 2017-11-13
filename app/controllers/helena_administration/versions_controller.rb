@@ -3,7 +3,7 @@ module HelenaAdministration
     respond_to :html
 
     before_action :load_survey, :add_breadcrumbs
-    before_action :load_version, only: [:edit, :update, :show]
+    before_action :load_version, only: %i[edit update show]
 
     def show
       add_breadcrumb t 'helena_administration.versions.version', version: @version.version
@@ -69,7 +69,7 @@ module HelenaAdministration
     def version_params
       params.require(:version).permit(:parent, :notes, :session_report, :active,
                                       settings: [:display_progressbar],
-                                      survey_detail_attributes: [:title, :description])
+                                      survey_detail_attributes: %i[title description])
     end
 
     def build_version
