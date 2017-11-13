@@ -19,7 +19,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'dotenv-rails'
   gem 'mongoid-rspec'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'capybara'
   gem 'launchy'
   gem 'faker'
