@@ -1,16 +1,12 @@
 header#header
-  nav.navbar.navbar-default role="navigation"
-    .container-fluid
-      .navbar-header
-        button.navbar-toggle.collapsed data-target="#navbar-collapse" data-toggle="collapse" type="button"
-          span.sr-only Toggle navigation
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-        = link_to 'Helena Admin', root_path, class: 'navbar-brand'
-      #navbar-collapse.collapse.navbar-collapse
-        ul.nav.navbar-nav.breadcrumbs
-          = render_breadcrumbs tag: :li, separator: ''
-        ul.nav.navbar-nav.navbar-right
-          li
-            a href="https://github.com/gurix/helena-admin" target='_blank' About
+  nav.navbar.navbar-light.bg-light.navbar-expand-lg role="navigation"
+    = link_to 'Helena Admin', root_path, class: 'navbar-brand'
+    .button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+      span.navbar-toggler-icon
+
+    #navbarSupportedContent.collapse.navbar-collapse
+      ol.navbar-nav.mr-auto
+        = render_breadcrumbs tag: :li, separator: '', class: 'breadcrumb-item'
+      ul.nav.navbar-nav.navbar-right
+        li
+          a href="https://github.com/gurix/helena-admin" target='_blank' About

@@ -17,18 +17,10 @@ body
     svg
       fill: $brand-primary
 
-  nav.navbar
-    ul.breadcrumbs
-      li:before
-        content: '»'
-        padding-right: 5px
-
+  #navbarSupportedContent
+    ol
       li
-        margin: 15px 5px
-
-        a
-          padding: 0px
-          display: inline
+        @extend .breadcrumb-item
 
   a.btn
     margin: 3px
