@@ -10,8 +10,8 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-gem 'compass-h5bp', group: :assets
 group :development, :test do
+  gem 'helena', git: 'https://github.com/gurix/helena.git'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'capybara'
