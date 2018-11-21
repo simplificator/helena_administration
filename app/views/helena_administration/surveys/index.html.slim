@@ -6,10 +6,10 @@ table.table.table-striped
       th.lanugage  width='20%' = Helena::Survey.human_attribute_name(:language)
       th.created_at width='10%' = Helena::Survey.human_attribute_name(:created_at)
       th width='20%'
-        = link_to new_survey_path, class: 'btn btn-default pull-right', role: 'button' do
+        = link_to new_survey_path, class: 'btn btn-dark pull-right', role: 'button' do
           i.fa.fa-plus-square-o
           = t('shared.actions.new')
-        = link_to new_import_survey_path, class: 'btn btn-default pull-right', role: 'button' do
+        = link_to new_import_survey_path, class: 'btn btn-dark pull-right', role: 'button' do
           i.fa.fa-caret-square-o-up
           = t('.import')
   tbody
