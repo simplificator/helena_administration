@@ -1,5 +1,6 @@
 module HelenaAdministration
   class ApplicationController < ActionController::Base
+    protect_from_forgery with: :exception
     before_action :set_locale
 
     def add_breadcrumb(name, path = nil, options = {})
