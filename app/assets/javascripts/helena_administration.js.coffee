@@ -1,6 +1,5 @@
 #= require jquery
 #= require jquery_ujs
-#= require polyfills
 #= require bootstrap
 #= require codemirror
 #= require codemirror/modes/xml

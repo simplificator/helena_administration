@@ -1,6 +1,5 @@
 require 'helena_administration/engine'
 require 'breadcrumbs_on_rails'
-require 'html5-rails'
 require 'bootstrap'
 require 'font-awesome-sass'
 require 'codemirror-rails'
