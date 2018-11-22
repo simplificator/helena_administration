@@ -16,11 +16,13 @@ module HelenaAdministration
 
     def create
       @question_group = @version.question_groups.build question_group_params
-      if @question_group.save
-        flash[:success] = t 'shared.actions.created'
-      else
-        flash.now[:danger] = t 'shared.actions.error'
-      end
+      # Note: Not used at the moment, because there are no validations atm
+      # if @question_group.save
+      #   flash[:success] = t 'shared.actions.created'
+      # else
+      #   flash.now[:danger] = t 'shared.actions.error'
+      # end
+      flash[:success] = t 'shared.actions.created' if @question_group.save
       respond_with @question_group, location: [@survey, @version, @question_group]
     end
 
@@ -29,12 +31,16 @@ module HelenaAdministration
     end
 
     def update
-      if @question_group.update_attributes(question_group_params)
-        flash[:success] = t 'shared.actions.updated'
-      else
-        flash.now[:danger] = t 'shared.actions.error'
-        add_breadcrumb @question_group.title_was
-      end
+      flash[:success] = t('shared.actions.updated') if @question_group.update_attributes(question_group_params)
+
+      # Note: Not used at the moment, because there are no validations atm
+      # if @question_group.update_attributes(question_group_params)
+      #   flash[:success] = t 'shared.actions.updated'
+      # else
+      #   flash.now[:danger] = t 'shared.actions.error'
+      #   add_breadcrumb @question_group.title_was
+      # end
+
       respond_with @question_group, location: [@survey, @version, @question_group]
     end
 

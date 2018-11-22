@@ -35,12 +35,16 @@ module HelenaAdministration
     end
 
     def update
-      if @version.update_attributes version_params
-        flash[:success] = t 'shared.actions.updated'
-      else
-        flash.now[:danger] = t 'shared.actions.error'
-        add_breadcrumb t 'helena_administration.versions.version', version: @version.version
-      end
+      @version.update_attributes version_params
+
+      # Note: Not used at the moment, because there are no validations atm
+      # if @version.update_attributes version_params
+      #   flash[:success] = t 'shared.actions.updated'
+      # else
+      #   flash.now[:danger] = t 'shared.actions.error'
+      #   add_breadcrumb t 'helena_administration.versions.version', version: @version.version
+      # end
+      flash[:success] = t 'shared.actions.updated'
       respond_with @version, location: [:edit, @survey, @version]
     end
 

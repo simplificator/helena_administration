@@ -15,7 +15,37 @@ feature 'Versions ' do
     end
   end
 
-  scenario 'User publish a new version' do
+  scenario 'User publish a new version without setting a parent' do
+    visit survey_path(survey)
+    within 'table.versions' do
+      click_link 'New'
+    end
+
+    within 'nav .breadcrumbs' do
+      expect(page).to have_text 'New version'
+    end
+
+    fill_in 'version_survey_detail_attributes_title', with: 'Everybody lies'
+    fill_in 'version_survey_detail_attributes_description', with: 'but shoes always tell the truth'
+    fill_in 'Notes', with: 'Luke, I am your father!'
+    fill_in 'version_session_report', with: 'Foo Bar'
+    select('', from: 'Parent').select_option
+    check 'Display progressbar'
+
+    expect(page).not_to have_selector 'version_active'
+
+    expect { click_button 'Save' }.to change { survey.reload.versions.count }.by(1)
+
+    new_version = survey.versions.where(version: survey.versions.max(:version)).first
+
+    expect(new_version.survey_detail.title).to eq 'Everybody lies'
+    expect(new_version.survey_detail.description).to eq 'but shoes always tell the truth'
+    expect(new_version.notes).to eq 'Luke, I am your father!'
+    expect(new_version.session_report).to eq 'Foo Bar'
+    expect(new_version.active).to be false
+  end
+
+  scenario 'User publish a new version when setting a parent' do
     visit survey_path(survey)
     within 'table.versions' do
       click_link 'New'
