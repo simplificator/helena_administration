@@ -1,35 +1,35 @@
 div id="#{dom_id(@version)}"
   .row
     .col-md-10
-      dl.dl-horizontal
+      dl.row
         - if @version.survey_detail
-          dt = Helena::SurveyDetail.human_attribute_name :title
-          dd = @version.survey_detail.title
+          dt.col-sm-2  = Helena::SurveyDetail.human_attribute_name :title
+          dd.col-sm-10 = @version.survey_detail.title
 
-          dt = Helena::SurveyDetail.human_attribute_name :description
-          dd = @version.survey_detail.description
+          dt.col-sm-2  = Helena::SurveyDetail.human_attribute_name :description
+          dd.col-sm-10 = @version.survey_detail.description
 
-        dt = Helena::Version.human_attribute_name :active
-        dd
+        dt.col-sm-2  = Helena::Version.human_attribute_name :active
+        dd.col-sm-10
           - if @version.active
             span.label.label-success = t 'shared.active'
           - else
             span.label.label-default = t 'shared.inactive'
 
-        dt = Helena::Version.human_attribute_name :version
-        dd = @version.version
+        dt.col-sm-2  = Helena::Version.human_attribute_name :version
+        dd.col-sm-10 = @version.version
 
-        dt = Helena::Version.human_attribute_name :notes
-        dd = @version.notes
+        dt.col-sm-2  = Helena::Version.human_attribute_name :notes
+        dd.col-sm-10 = @version.notes
 
-        dt = Helena::Version.human_attribute_name :created_at
-        dd = distance_of_time_in_words_to_now(@version.created_at)
+        dt.col-sm-2  = Helena::Version.human_attribute_name :created_at
+        dd.col-sm-10 = distance_of_time_in_words_to_now(@version.created_at)
 
-        dt = Helena::Version.human_attribute_name :session_report
-        dd = truncate_between strip_tags(sanitize @version.session_report), 100
+        dt.col-sm-2  = Helena::Version.human_attribute_name :session_report
+        dd.col-sm-10 = truncate_between strip_tags(sanitize @version.session_report), 100
     .col-md-2
       .pull-right
-        = link_to edit_survey_version_path(@survey, @version), class: 'btn btn-default', role: 'button' do
+        = link_to edit_survey_version_path(@survey, @version), class: 'btn btn-dark', role: 'button' do
           i.fa.fa-pencil-square-o
           = t('shared.actions.edit')
           = link_to [@survey, @version], class: "btn btn-danger #{'disabled' if @version.active}", method: :delete, data: { confirm: t('shared.actions.ask_for_deletion') } do
@@ -46,7 +46,7 @@ div id="#{dom_id(@version)}"
         th.title = Helena::QuestionGroup.human_attribute_name(:title)
         th.created_at width='10%' = Helena::QuestionGroup.human_attribute_name(:created_at)
         th width='20%'
-          = link_to [:new, @survey, @version, :question_group], class: "btn btn-default pull-right #{'disabled' if @version.active}", role: 'button' do
+          = link_to [:new, @survey, @version, :question_group], class: "btn btn-dark pull-right #{'disabled' if @version.active}", role: 'button' do
             i.fa.fa-plus-square-o
             = t('shared.actions.new')
     tbody
@@ -57,10 +57,10 @@ div id="#{dom_id(@version)}"
           td.create_at  = distance_of_time_in_words_to_now(question_group.created_at)
           td.actions
             .pull-right
-              = link_to [@survey, @version, question_group], class: 'btn btn-default', role: 'button' do
+              = link_to [@survey, @version, question_group], class: 'btn btn-link', role: 'button' do
                 i.fa.fa-angle-right
                 = t('shared.actions.view')
-              = link_to [:edit, @survey, @version, question_group], class: "btn btn-default #{'disabled' if @version.active}", role: 'button' do
+              = link_to [:edit, @survey, @version, question_group], class: "btn btn-link #{'disabled' if @version.active}", role: 'button' do
                 i.fa.fa-pencil-square-o
                 = t('shared.actions.edit')
               = link_to [@survey, @version, question_group], class: "btn btn-danger #{'disabled' if @version.active}", method: :delete, data: { confirm: t('shared.actions.ask_for_deletion') } do

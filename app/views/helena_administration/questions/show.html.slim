@@ -1,24 +1,24 @@
 div id="#{dom_id(@question)}"
   .row
     .col-md-10
-      dl.dl-horizontal
-        dt = Helena::Question.human_attribute_name :position
-        dd = @question.position
+      dl.row
+        dt.col-sm-2 = Helena::Question.human_attribute_name :position
+        dd.col-sm-10 = @question.position
 
-        dt = Helena::Question.human_attribute_name :code
-        dd = @question.code
+        dt.col-sm-2 = Helena::Question.human_attribute_name :code
+        dd.col-sm-10 = @question.code
 
-        dt = Helena::Question.human_attribute_name :question_text
-        dd = @question.question_text
+        dt.col-sm-2 = Helena::Question.human_attribute_name :question_text
+        dd.col-sm-10 = @question.question_text
 
-        dt = Helena::Question.human_attribute_name :type
-        dd = @question.class.model_name.human
+        dt.col-sm-2 = Helena::Question.human_attribute_name :type
+        dd.col-sm-10 = @question.class.model_name.human
 
-        dt = Helena::Question.human_attribute_name :created_at
-        dd = distance_of_time_in_words_to_now(@question.created_at)
+        dt.col-sm-2 = Helena::Question.human_attribute_name :created_at
+        dd.col-sm-10 = distance_of_time_in_words_to_now(@question.created_at)
     .col-md-2
       .pull-right
-        = link_to [:edit, @survey, @version, @question_group, @question], class: "btn btn-default  #{'disabled' if @version.active}", role: 'button' do
+        = link_to [:edit, @survey, @version, @question_group, @question], class: "btn btn-dark  #{'disabled' if @version.active}", role: 'button' do
           i.fa.fa-pencil-square-o
           = t('shared.actions.edit')
           = link_to [@survey, @version, @question_group, @question] , class: "btn btn-danger #{'disabled' if @version.active}", method: :delete, data: { confirm: t('shared.actions.ask_for_deletion') } do
