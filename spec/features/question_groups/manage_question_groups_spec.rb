@@ -79,7 +79,7 @@ feature 'Question groups' do
   end
 
   scenario 'User can view question_group details' do
-    question_group =  version.question_groups.create title: 'Awesome new question group', position: 666
+    question_group = version.question_groups.create title: 'Awesome new question group', position: 666
 
     visit survey_version_question_group_path(survey, version, question_group)
 

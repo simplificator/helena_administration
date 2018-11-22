@@ -11,13 +11,13 @@ gemspec
 # your gem to rubygems.org.
 
 group :development, :test do
-  gem 'helena', git: 'https://github.com/gurix/helena.git'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'capybara'
   gem 'dotenv-rails'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'helena', git: 'https://github.com/gurix/helena.git'
   gem 'launchy'
   gem 'mongoid-rspec'
   gem 'pry'

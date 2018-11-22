@@ -35,7 +35,7 @@ feature 'Versions ' do
 
     expect { click_button 'Save' }.to change { survey.reload.versions.count }.by(1)
 
-    new_version = survey.versions.sort.last
+    new_version = survey.versions.where(version: survey.versions.max(:version)).first
 
     expect(new_version.survey_detail.title).to eq 'Everybody lies'
     expect(new_version.survey_detail.description).to eq 'but shoes always tell the truth'
@@ -90,7 +90,7 @@ feature 'Versions ' do
   end
 
   scenario 'User can view version details' do
-    version =  survey.versions.create notes: 'Awesome new version', version: 666, session_report: 'AbCdE'
+    version = survey.versions.create notes: 'Awesome new version', version: 666, session_report: 'AbCdE'
     version.survey_detail = Helena::SurveyDetail.new title: 'Piracy', description: 'Typically an act of robbery or criminal violence at sea.'
 
     visit survey_version_path(survey, version)

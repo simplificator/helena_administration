@@ -1,15 +1,9 @@
 AllCops:
-  Include:
-    - '**/Rakefile'
-    - '**/config.ru'
-    - '**/Gemfile'
   Exclude:
-    - helena_administration.gemspec
     - bin/**
-    - spec/**/*
-    - db/migrate/**/*
-    - db/seeds.rb
-    - db/seeds/**/*
+    - spec/dummy/bin/**
+    - helena.gemspec
+    - spec/dummy/config/initializers/secret_token.rb
 Documentation:
   Enabled: false
 LineLength:
@@ -17,3 +11,14 @@ LineLength:
   Max: 160
 AbcSize:
   Enabled: false
+FrozenStringLiteralComment:
+  Enabled: false
+Metrics/BlockLength:
+  ExcludedMethods:
+    - describe
+    - context
+    - scenario
+    - it
+    - feature
+  Exclude:
+    - "*.gemspec"

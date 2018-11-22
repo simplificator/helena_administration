@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'Surveys' do
-  scenario 'Index site lists all surveys'  do
+  scenario 'Index site lists all surveys' do
     create :survey, name: 'Innerbetriebliche Zufriedenheit', position: 2
     create :survey, name: 'Life satisfaction scale', position: 1
 
@@ -67,7 +67,7 @@ feature 'Surveys' do
 
     fill_in 'Name', with: ''
 
-    expect { click_button 'Save' }.not_to change { survey.reload }
+    expect { click_button 'Save' }.not_to(change { survey.reload })
 
     within 'nav .breadcrumbs' do
       expect(page).to have_text 'Swiss fertility survey'

@@ -43,7 +43,7 @@ feature 'Sessions' do
 
     expect(session.reload.token).to eq '123'
     expect(session.reload.view_token).to eq '456'
-    expect(session.reload.answers.map(&:code)).to eq %w(a b)
+    expect(session.reload.answers.map(&:code)).to eq %w[a b]
     expect(session.reload.answers.map(&:value)).to eq ['c', 4]
     expect(session.reload.completed).to eq true
     expect(session.reload.last_question_group_id).to eq second_question_group.id
