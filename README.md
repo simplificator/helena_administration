@@ -53,9 +53,7 @@ end
 
 ## Contact
 
-[info@markusgraf.ch](mailto: info@markusgraf.ch)
-
-Or at [#HelenaFramework](irc://chat.freenode.net/HelenaFramework) on freenode.net
+Markus Graf <info@markusgraf.ch>
 
 ## Support
 
