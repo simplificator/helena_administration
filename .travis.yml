@@ -1,3 +1,7 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=4d774aeb9d1846c9537d5c01ddf1a627976e9338d8de3588e0db9195eee62ab7
+
 language: ruby
 rvm:
   - 2.5.1
@@ -7,3 +11,11 @@ services:
 
 cache: bundler
 sudo: false
+
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
