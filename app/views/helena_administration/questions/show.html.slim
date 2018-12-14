@@ -19,8 +19,8 @@ div id="#{dom_id(@question)}"
     .col-md-2
       .pull-right
         = link_to [:edit, @survey, @version, @question_group, @question], class: "btn btn-dark  #{'disabled' if @version.active}", role: 'button' do
-          i.fa.fa-pencil-square-o
+          i.fa.fa-edit
           = t('shared.actions.edit')
           = link_to [@survey, @version, @question_group, @question] , class: "btn btn-danger #{'disabled' if @version.active}", method: :delete, data: { confirm: t('shared.actions.ask_for_deletion') } do
-            i.fa.fa-remove
+            i.fa.fa-trash
             = t('shared.actions.delete')

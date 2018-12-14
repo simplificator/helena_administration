@@ -7,7 +7,7 @@ table.table.table-striped
       th.created_at width='10%' = Helena::Survey.human_attribute_name(:created_at)
       th width='20%'
         = link_to new_survey_path, class: 'btn btn-dark pull-right', role: 'button' do
-          i.fa.fa-plus-square-o
+          i.fa.fa-plus-square
           = t('shared.actions.new')
         = link_to new_import_survey_path, class: 'btn btn-dark pull-right', role: 'button' do
           i.fa.fa-caret-square-o-up
@@ -26,9 +26,9 @@ table.table.table-striped
               = t('shared.actions.view')
 
             = link_to edit_survey_path(survey), class: 'btn btn-default', role: 'button' do
-              i.fa.fa-pencil-square-o
+              i.fa.fa-edit
               = t('shared.actions.edit')
 
             = link_to survey, class: 'btn btn-danger', method: :delete, data: { confirm: t('shared.actions.ask_for_deletion') } do
-              i.fa.fa-remove
+              i.fa.fa-trash
               = t('shared.actions.delete')

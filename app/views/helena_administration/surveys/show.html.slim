@@ -16,11 +16,11 @@ div id="#{dom_id(@survey)}"
     .col-md-2
       .pull-right
         = link_to edit_survey_path(@survey), class: 'btn btn-dark', role: 'button' do
-          i.fa.fa-pencil-square-o
+          i.fa.fa-edit
           = t('shared.actions.edit')
 
         = link_to survey_path(@survey), class: 'btn btn-danger', method: :delete, data: { confirm: t('shared.actions.ask_for_deletion') } do
-          i.fa.fa-remove
+          i.fa.fa-trash
           = t('shared.actions.delete')
 
 
@@ -37,7 +37,7 @@ div id="#{dom_id(@survey)}"
         th.created_at width='10%' = Helena::Version.human_attribute_name(:created_at)
         th width='20%'
           = link_to new_survey_version_path(@survey), class: 'btn btn-dark pull-right', role: 'button' do
-            i.fa.fa-plus-square-o
+            i.fa.fa-plus-square
             = t('shared.actions.new')
     tbody
       - @survey.versions.desc(:version).each do |version|
@@ -57,10 +57,10 @@ div id="#{dom_id(@survey)}"
                 i.fa.fa-angle-right
                 = t('shared.actions.view')
               = link_to edit_survey_version_path(@survey, version), class: 'btn btn-link', role: 'button' do
-                i.fa.fa-pencil-square-o
+                i.fa.fa-edit
                 = t('shared.actions.edit')
               = link_to [@survey, version], class: "btn btn-danger #{'disabled' if version.active}", method: :delete, data: { confirm: t('shared.actions.ask_for_deletion') } do
-                i.fa.fa-remove
+                i.fa.fa-trash
                 = t('shared.actions.delete')
 
   - if @survey.versions.any?
@@ -85,7 +85,7 @@ div id="#{dom_id(@survey)}"
           th.created_at width='10%' = Helena::Session.human_attribute_name(:created_at)
           th width='20%'
             = link_to new_survey_session_path(@survey), class: 'btn btn-dark pull-right', role: 'button' do
-              i.fa.fa-plus-square-o
+              i.fa.fa-plus-square
               = t('shared.actions.new')
       tfoot
         tr
@@ -113,8 +113,8 @@ div id="#{dom_id(@survey)}"
                   i.fa.fa-play
                   = t('shared.actions.run')
                 = link_to edit_survey_session_path(@survey, session), class: 'btn btn-default', role: 'button' do
-                  i.fa.fa-pencil-square-o
+                  i.fa.fa-edit
                   = t('shared.actions.edit')
                 = link_to survey_session_path(@survey, session), class: 'btn btn-danger', method: :delete, data: { confirm: t('shared.actions.ask_for_deletion') } do
-                  i.fa.fa-remove
+                  i.fa.fa-trash
                   = t('shared.actions.delete')

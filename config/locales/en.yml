@@ -1,5 +1,16 @@
 en:
   shared:
+    delete_question: Are you sure?
+    delete: Delete
+    save: Save
+    edit: Edit
+    add: Add
+    show: Show
+    code_hint: The code should consist only of lowercase letters, numbers and underscores. Don't begin with a digit or an underscore and don't end with an underscore.
+    move_up: Move up
+    move_down: Move down
+    untitled: Untitled
+
     navigation:
       dashboard: Dashboard
 
