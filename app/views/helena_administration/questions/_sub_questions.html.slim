@@ -25,7 +25,7 @@ h3= t '.options'
             = sub_question.input :text, label: false
           - if @question.is_a?(Helena::Questions::CheckboxGroup)
             td.value
-              = sub_question.input :value, label: false, as: :hidden, value: 1
+              = sub_question.input :value, label: false
           td.delete
             - unless sub_question.object.new_record?
               = sub_question.input :_destroy, as:    :boolean,
