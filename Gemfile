@@ -17,7 +17,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'helena', git: 'https://github.com/gurix/helena.git'
+  # gem 'helena', path: '../helena/' # git: 'https://github.com/gurix/helena.git'
   gem 'launchy'
   gem 'mongoid-rspec'
   gem 'pry'

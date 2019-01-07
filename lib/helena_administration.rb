@@ -10,6 +10,7 @@ require 'mongoid_orderable'
 require 'mongoid-simple-tags'
 require 'kaminari/mongoid'
 require 'kaminari/actionview'
+require 'simple_form'
 
 module HelenaAdministration
 end
