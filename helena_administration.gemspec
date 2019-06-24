@@ -34,7 +34,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'simple_form', '~> 4'
   s.add_runtime_dependency 'coffee-rails', '~> 4.1'
   s.add_runtime_dependency 'font-awesome-sass'
-  s.add_dependency 'bootstrap', '~> 4.1.3'
+  s.add_dependency 'bootstrap', '>= 4.3.1'
   s.add_dependency 'responders', '~> 2.0'
 
   s.add_development_dependency 'rspec-collection_matchers', '~> 1'
