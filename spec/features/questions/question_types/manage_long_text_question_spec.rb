@@ -9,7 +9,7 @@ feature 'Long text question management' do
   scenario 'edits a question' do
     visit edit_survey_version_question_group_questions_long_text_path(survey, version, question_group, question)
 
-    a_very_long_text = Faker::Lorem.paragraph(20)
+    a_very_long_text = Faker::Lorem.paragraph(sentence_count: 20)
 
     fill_in 'Default value', with: a_very_long_text
     check 'Required'

@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
 gemspec
+gem 'helena', git: 'https://github.com/simplificator/helena.git'
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
@@ -11,6 +12,7 @@ gemspec
 # your gem to rubygems.org.
 
 group :development, :test do
+  gem 'selenium-webdriver'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'capybara'
@@ -22,6 +24,6 @@ group :development, :test do
   gem 'mongoid-rspec'
   gem 'pry'
   gem 'pry-byebug'
-  gem 'responders', '~> 2.0'
+  gem 'responders'
   gem 'simplecov'
 end
